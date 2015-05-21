@@ -142,7 +142,7 @@
         'include_tests%': 0,
         'restrict_webrtc_logging%': 1,
       }, {
-        'include_tests%': 1,
+        'include_tests%': 0,
         'restrict_webrtc_logging%': 0,
       }],
       ['OS=="ios"', {

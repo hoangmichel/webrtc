@@ -8,7 +8,7 @@
 
 {
   'variables': {
-    'include_tests%': 1,
+    'include_tests%': 0,
     'webrtc_root_additional_dependencies': [],
   },
   'targets': [
