@@ -18,13 +18,13 @@
       'dependencies': [
         'webrtc/webrtc.gyp:*',
         'talk/libjingle.gyp:*',
-        'talk/libjingle_examples.gyp:*',
+#        'talk/libjingle_examples.gyp:*',
         '<@(webrtc_root_additional_dependencies)',
       ],
       'conditions': [
         ['OS=="android"', {
           'dependencies': [
-            'webrtc/webrtc_examples.gyp:*',
+#            'webrtc/webrtc_examples.gyp:*',
           ],
         }],
         ['include_tests==1', {
