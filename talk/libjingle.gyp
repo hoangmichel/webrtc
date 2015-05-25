@@ -40,7 +40,7 @@
        }],
      ],
     }],
-    ['OS=="linux" or OS=="android"', {
+    ['java_home!=0', {
       'targets': [
         {
           'target_name': 'libjingle_peerconnection_so',
@@ -304,13 +304,13 @@
           ],
           'direct_dependent_settings': {
             'include_dirs': [
-              '<(peeracle_webrtc_root)/talk/app/webrtc/objc/public',
+              '<(DEPTH)/talk/app/webrtc/objc/public',
             ],
           },
           'include_dirs': [
-            '<(peeracle_webrtc_root)/talk/app/webrtc',
-            '<(peeracle_webrtc_root)/talk/app/webrtc/objc',
-            '<(peeracle_webrtc_root)/talk/app/webrtc/objc/public',
+            '<(DEPTH)/talk/app/webrtc',
+            '<(DEPTH)/talk/app/webrtc/objc',
+            '<(DEPTH)/talk/app/webrtc/objc/public',
           ],
           'link_settings': {
             'libraries': [
@@ -385,18 +385,18 @@
       'conditions': [
         ['build_json==1', {
           'dependencies': [
-            '<(peeracle_webrtc_root)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
+            '<(DEPTH)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
           ],
           'export_dependent_settings': [
-            '<(peeracle_webrtc_root)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
+            '<(DEPTH)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
           ],
         }],
         ['build_expat==1', {
           'dependencies': [
-            '<(peeracle_webrtc_root)/third_party/expat/expat.gyp:expat',
+            '<(DEPTH)/third_party/expat/expat.gyp:expat',
           ],
           'export_dependent_settings': [
-            '<(peeracle_webrtc_root)/third_party/expat/expat.gyp:expat',
+            '<(DEPTH)/third_party/expat/expat.gyp:expat',
           ],
         }],
       ],
@@ -438,6 +438,8 @@
         'media/base/cryptoparams.h',
         'media/base/device.h',
         'media/base/fakescreencapturerfactory.h',
+        'media/base/filemediaengine.cc',
+        'media/base/filemediaengine.h',
         'media/base/hybriddataengine.h',
         'media/base/mediachannel.h',
         'media/base/mediacommon.h',
@@ -477,11 +479,13 @@
         'media/devices/videorendererfactory.h',
         'media/devices/yuvframescapturer.cc',
         'media/devices/yuvframescapturer.h',
+        'media/other/linphonemediaengine.h',
         'media/sctp/sctpdataengine.cc',
         'media/sctp/sctpdataengine.h',
         'media/webrtc/simulcast.cc',
         'media/webrtc/simulcast.h',
         'media/webrtc/webrtccommon.h',
+        'media/webrtc/webrtcexport.h',
         'media/webrtc/webrtcmediaengine.cc',
         'media/webrtc/webrtcmediaengine.h',
         'media/webrtc/webrtcmediaengine.cc',
@@ -491,6 +495,7 @@
         'media/webrtc/webrtcvideocapturer.h',
         'media/webrtc/webrtcvideocapturerfactory.h',
         'media/webrtc/webrtcvideocapturerfactory.cc',
+        'media/webrtc/webrtcvideocapturer.h',
         'media/webrtc/webrtcvideodecoderfactory.h',
         'media/webrtc/webrtcvideoencoderfactory.h',
         'media/webrtc/webrtcvideoengine2.cc',
