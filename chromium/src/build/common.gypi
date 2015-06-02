@@ -605,7 +605,7 @@
       # If no directory is specified then a temporary directory will be used.
       'test_isolation_outdir%': '',
 
-      'wix_path%': '<(DEPTH)/third_party/wix',
+      'wix_path%': '<(peeracle_webrtc_root)/third_party/wix',
 
       # Supervised users are enabled by default.
       'enable_supervised_users%': 1,
@@ -937,23 +937,23 @@
           'use_allocator%': 'none',
           # sysroot needs to be an absolute path otherwise it generates
           # incorrect results when passed to pkg-config
-          'sysroot%': '<!(cd <(DEPTH) && pwd -P)/chrome/installer/linux/debian_wheezy_arm-sysroot',
+          'sysroot%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/chrome/installer/linux/debian_wheezy_arm-sysroot',
         }], # OS=="linux" and target_arch=="arm" and chromeos==0
 
         ['OS=="linux" and ((branding=="Chrome" and buildtype=="Official" and chromeos==0) or use_sysroot==1)' , {
           'conditions': [
             ['target_arch=="x64"', {
-              'sysroot%': '<!(cd <(DEPTH) && pwd -P)/chrome/installer/linux/debian_wheezy_amd64-sysroot',
+              'sysroot%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/chrome/installer/linux/debian_wheezy_amd64-sysroot',
             }],
             ['target_arch=="ia32"', {
-              'sysroot%': '<!(cd <(DEPTH) && pwd -P)/chrome/installer/linux/debian_wheezy_i386-sysroot',
+              'sysroot%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/chrome/installer/linux/debian_wheezy_i386-sysroot',
             }],
         ],
         }], # OS=="linux" and branding=="Chrome" and buildtype=="Official" and chromeos==0
 
         ['OS=="linux" and target_arch=="mipsel"', {
-          'sysroot%': '<!(cd <(DEPTH) && pwd -P)/mipsel-sysroot/sysroot',
-          'CXX%': '<!(cd <(DEPTH) && pwd -P)/mipsel-sysroot/bin/mipsel-linux-gnu-gcc',
+          'sysroot%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/mipsel-sysroot/sysroot',
+          'CXX%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/mipsel-sysroot/bin/mipsel-linux-gnu-gcc',
         }],
 
         # Whether tests targets should be run, archived or just have the
@@ -1006,9 +1006,9 @@
         # Path to sas.dll, which provides the SendSAS function.
         # http://msdn.microsoft.com/en-us/library/windows/desktop/dd979761(v=vs.85).aspx
         ['target_arch=="x64"', {
-          'sas_dll_path%': '<(DEPTH)/third_party/platformsdk_win7/files/redist/amd64',
+          'sas_dll_path%': '<(peeracle_webrtc_root)/third_party/platformsdk_win7/files/redist/amd64',
         }, {
-          'sas_dll_path%': '<(DEPTH)/third_party/platformsdk_win7/files/redist/x86',
+          'sas_dll_path%': '<(peeracle_webrtc_root)/third_party/platformsdk_win7/files/redist/x86',
         }],
       ],
 
@@ -1465,8 +1465,8 @@
     'sas_dll_exists': '<!pymod_do_main(dir_exists "<(sas_dll_path)")',
     'wix_exists': '<!pymod_do_main(dir_exists "<(wix_path)")',
 
-    'windows_sdk_default_path': '<(DEPTH)/third_party/platformsdk_win8/files',
-    'directx_sdk_default_path': '<(DEPTH)/third_party/directxsdk/files',
+    'windows_sdk_default_path': '<(peeracle_webrtc_root)/third_party/platformsdk_win8/files',
+    'directx_sdk_default_path': '<(peeracle_webrtc_root)/third_party/directxsdk/files',
 
     # Whether we are using the rlz library or not.  Platforms like Android send
     # rlz codes for searches but do not use the library.
@@ -1514,8 +1514,8 @@
 
     # Used to set libjpeg_gyp_path. Chrome OS ui/gfx/gfx.gyp uses the IJG path
     # for robust login screen decoding.
-    'libjpeg_ijg_gyp_path': '<(DEPTH)/third_party/libjpeg/libjpeg.gyp',
-    'libjpeg_turbo_gyp_path': '<(DEPTH)/third_party/libjpeg_turbo/libjpeg.gyp',
+    'libjpeg_ijg_gyp_path': '<(peeracle_webrtc_root)/third_party/libjpeg/libjpeg.gyp',
+    'libjpeg_turbo_gyp_path': '<(peeracle_webrtc_root)/third_party/libjpeg_turbo/libjpeg.gyp',
 
     'conditions': [
       ['buildtype=="Official"', {
@@ -1676,11 +1676,11 @@
             # Unfortunately, it is required to use the absolute path to the SDK
             # because it us passed to ant which uses a different relative path
             # from GYP.
-            'android_sdk_root%': '<!(cd <(DEPTH) && pwd -P)/third_party/android_tools/sdk/',
+            'android_sdk_root%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/third_party/android_tools/sdk/',
             # Similarly, gdbserver and the Android toolchain need to use the
             # absolute path to the NDK because they are used at different levels
             # in the GYP files.
-            'android_ndk_absolute_root%': '<!(cd <(DEPTH) && pwd -P)/third_party/android_tools/ndk/',
+            'android_ndk_absolute_root%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/third_party/android_tools/ndk/',
             'android_host_arch%': '<!(uname -m)',
             # Android API-level of the SDK used for compilation.
             'android_sdk_version%': '22',
@@ -1904,9 +1904,9 @@
           # Official mac builds require a specific OS X SDK, but iOS and
           # non-official mac builds do not.
           ['branding=="Chrome" and buildtype=="Official" and OS=="mac"', {
-            'mac_sdk%': '<!(python <(DEPTH)/build/mac/find_sdk.py --verify <(mac_sdk_min) --sdk_path=<(mac_sdk_path))',
+            'mac_sdk%': '<!(python <(peeracle_webrtc_root)/build/mac/find_sdk.py --verify <(mac_sdk_min) --sdk_path=<(mac_sdk_path))',
           }, {
-            'mac_sdk%': '<!(python <(DEPTH)/build/mac/find_sdk.py <(mac_sdk_min))',
+            'mac_sdk%': '<!(python <(peeracle_webrtc_root)/build/mac/find_sdk.py <(mac_sdk_min))',
           }],
           ['branding=="Chrome" and buildtype=="Official"', {
             # Enable uploading crash dumps.
@@ -2083,7 +2083,7 @@
           '--no-output-all-resource-defines',
         ],
         # iOS uses a whitelist to filter resources.
-        'grit_whitelist%': '<(DEPTH)/build/ios/grit_whitelist.txt',
+        'grit_whitelist%': '<(peeracle_webrtc_root)/build/ios/grit_whitelist.txt',
 
         # Enable host builds when generating with ninja-ios.
         'conditions': [
@@ -2167,9 +2167,9 @@
               'variables': {
                 'conditions': [
                   ['OS=="mac" or OS=="ios"', {
-                    'clang_lib_path%': '<!(cd <(DEPTH) && pwd -P)/third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.dylib',
+                    'clang_lib_path%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.dylib',
                   }, { # OS != "mac" or OS != "ios"
-                    'clang_lib_path%': '<!(cd <(DEPTH) && pwd -P)/third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so',
+                    'clang_lib_path%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so',
                   }],
                 ],
               },
@@ -2394,7 +2394,7 @@
     ],
 
     # The path to the ANGLE library.
-    'angle_path': '<(DEPTH)/third_party/angle',
+    'angle_path': '<(peeracle_webrtc_root)/third_party/angle',
 
     # List of default apps to install in new profiles.  The first list contains
     # the source files as found in svn.  The second list, used only for linux,
@@ -2472,7 +2472,7 @@
       # An application manifest fragment to declare compatibility settings for
       # 'executable' targets. Ignored in other target type.
       'win_exe_compatibility_manifest%':
-          '<(DEPTH)\\build\\win\\compatibility.manifest',
+          '<(peeracle_webrtc_root)\\build\\win\\compatibility.manifest',
 
       'release_extra_cflags%': '',
       'debug_extra_cflags%': '',
@@ -2583,12 +2583,12 @@
     'conditions': [
       ['(OS=="mac" or OS=="ios") and asan==1', {
         'dependencies': [
-          '<(DEPTH)/build/mac/asan.gyp:asan_dynamic_runtime',
+          '<(peeracle_webrtc_root)/build/mac/asan.gyp:asan_dynamic_runtime',
         ],
       }],
       ['OS=="win" and asan==1 and component=="shared_library"', {
         'dependencies': [
-          '<(DEPTH)/build/win/asan.gyp:asan_dynamic_runtime',
+          '<(peeracle_webrtc_root)/build/win/asan.gyp:asan_dynamic_runtime',
         ],
       }],
       ['OS=="linux" and use_allocator!="none" and clang_type_profiler==1', {
@@ -2600,7 +2600,7 @@
         ],
         'defines': ['TYPE_PROFILING'],
         'dependencies': [
-          '<(DEPTH)/base/allocator/allocator.gyp:type_profiler',
+          '<(peeracle_webrtc_root)/base/allocator/allocator.gyp:type_profiler',
         ],
       }],
       ['branding=="Chrome"', {
@@ -2625,7 +2625,7 @@
         # (defines are passed via the command line, and build systems rebuild
         # things when their commandline changes). Nothing should ever read this
         # define.
-        'defines': ['CR_CLANG_REVISION=<!(python <(DEPTH)/tools/clang/scripts/update.py --print-revision)'],
+        'defines': ['CR_CLANG_REVISION=<!(python <(peeracle_webrtc_root)/tools/clang/scripts/update.py --print-revision)'],
       }],
       ['enable_rlz==1', {
         'defines': ['ENABLE_RLZ'],
@@ -2814,7 +2814,7 @@
             'KASKO',
         ],
         'include_dirs': [
-          '<(DEPTH)/third_party/kasko/include',
+          '<(peeracle_webrtc_root)/third_party/kasko/include',
         ],
       }],
       ['OS=="win"', {
@@ -2829,7 +2829,7 @@
           '_USING_V110_SDK71_',
         ],
         'include_dirs': [
-          '<(DEPTH)/third_party/wtl/include',
+          '<(peeracle_webrtc_root)/third_party/wtl/include',
         ],
         'conditions': [
           ['win_z7!=0', {
@@ -3202,7 +3202,7 @@
       'Common_Base': {
         'abstract': 1,
         'msvs_configuration_attributes': {
-          'OutputDirectory': '<(DEPTH)\\build\\<(build_dir_prefix)$(ConfigurationName)',
+          'OutputDirectory': '<(peeracle_root)\\build\\<(build_dir_prefix)$(ConfigurationName)',
           'IntermediateDirectory': '$(OutDir)\\obj\\$(ProjectName)',
           'CharacterSet': '1',
         },
@@ -3571,7 +3571,7 @@
         'conditions': [
           ['use_sanitizer_options==1 and ((OS=="linux" and (chromeos==0 or target_arch!="ia32")) or OS=="mac")', {
             'dependencies': [
-              '<(DEPTH)/build/sanitizers/sanitizers.gyp:sanitizer_options',
+              '<(peeracle_webrtc_root)/build/sanitizers/sanitizers.gyp:sanitizer_options',
             ],
           }],
         ],
@@ -4224,7 +4224,7 @@
                 ],
                 'ldflags': [
                   '--sysroot=<(sysroot)',
-                  '<!(<(DEPTH)/build/linux/sysroot_ld_path.sh <(sysroot))',
+                  '<!(<(peeracle_webrtc_root)/build/linux/sysroot_ld_path.sh <(sysroot))',
                 ],
               }]]
           }],
@@ -4468,17 +4468,17 @@
           }],
           ['use_instrumented_libraries==1', {
             'dependencies': [
-              '<(DEPTH)/third_party/instrumented_libraries/instrumented_libraries.gyp:instrumented_libraries',
+              '<(peeracle_webrtc_root)/third_party/instrumented_libraries/instrumented_libraries.gyp:instrumented_libraries',
             ],
           }],
           ['use_prebuilt_instrumented_libraries==1', {
             'dependencies': [
-              '<(DEPTH)/third_party/instrumented_libraries/instrumented_libraries.gyp:prebuilt_instrumented_libraries',
+              '<(peeracle_webrtc_root)/third_party/instrumented_libraries/instrumented_libraries.gyp:prebuilt_instrumented_libraries',
             ],
           }],
           ['use_custom_libcxx==1', {
             'dependencies': [
-              '<(DEPTH)/buildtools/third_party/libc++/libc++.gyp:libcxx_proxy',
+              '<(peeracle_webrtc_root)/buildtools/third_party/libc++/libc++.gyp:libcxx_proxy',
             ],
           }],
           ['order_profiling!=0 and (chromeos==1 or OS=="linux" or OS=="android")', {
@@ -4565,7 +4565,7 @@
           }],
           ['linux_use_bundled_binutils==1', {
             'cflags': [
-              '-B<!(cd <(DEPTH) && pwd -P)/<(binutils_dir)',
+              '-B<!(cd <(peeracle_webrtc_root) && pwd -P)/<(binutils_dir)',
             ],
           }],
           ['linux_use_bundled_gold==1 and '
@@ -4579,7 +4579,7 @@
             # path at link time to find "as", and our bundled "as" can only
             # target x86.
             'ldflags': [
-              '-B<!(cd <(DEPTH) && pwd -P)/<(binutils_dir)',
+              '-B<!(cd <(peeracle_webrtc_root) && pwd -P)/<(binutils_dir)',
             ],
           }],
           # Some binutils 2.23 releases may or may not have new dtags enabled,
@@ -4781,7 +4781,7 @@
                     # Use a linker version script to strip JNI exports from
                     # binaries which have not specifically asked to use them.
                     'ldflags': [
-                      '-Wl,--version-script=<!(cd <(DEPTH) && pwd -P)/build/android/android_no_jni_exports.lst',
+                      '-Wl,--version-script=<!(cd <(peeracle_webrtc_root) && pwd -P)/build/android/android_no_jni_exports.lst',
                     ],
                   }],
                 ],
@@ -5616,7 +5616,7 @@
           'VCResourceCompilerTool': {
             'Culture' : '1033',
             'AdditionalIncludeDirectories': [
-              '<(DEPTH)',
+              '<(peeracle_webrtc_root)',
               '<(SHARED_INTERMEDIATE_DIR)',
             ],
           },
@@ -5753,13 +5753,13 @@
                       # invoked via /fallback. This is critical for using macros
                       # like ASAN_UNPOISON_MEMORY_REGION in files where we fall
                       # back.
-                      '<(DEPTH)/<(make_clang_dir)/lib/clang/3.7.0/include_sanitizer',
+                      '<(peeracle_webrtc_root)/<(make_clang_dir)/lib/clang/3.7.0/include_sanitizer',
                     ],
                   },
                   'VCLinkerTool': {
                     'AdditionalLibraryDirectories': [
                       # TODO(hans): If make_clang_dir is absolute, this breaks.
-                      '<(DEPTH)/<(make_clang_dir)/lib/clang/3.7.0/lib/windows',
+                      '<(peeracle_webrtc_root)/<(make_clang_dir)/lib/clang/3.7.0/lib/windows',
                     ],
                   },
                   'target_conditions': [
@@ -6193,6 +6193,6 @@
     # files to appear (when present) in the UI as actual files and not red
     # red "missing file" proxies, the correct path to PROJECT_DERIVED_FILE_DIR,
     # and therefore SYMROOT, needs to be set at the project level.
-    'SYMROOT': '<(DEPTH)/xcodebuild',
+    'SYMROOT': '<(peeracle_root)/xcodebuild',
   },
 }
