@@ -15,8 +15,8 @@
 
 {
   'dependencies': [
-    '<(DEPTH)/build/android/pylib/device/commands/commands.gyp:chromium_commands',
-    '<(DEPTH)/tools/android/android_tools.gyp:android_tools',
+    '<(peeracle_webrtc_root)/build/android/pylib/device/commands/commands.gyp:chromium_commands',
+    '<(peeracle_webrtc_root)/tools/android/android_tools.gyp:android_tools',
   ],
   'variables': {
     'output_dex_path': '<(PRODUCT_DIR)/lib.java/<(_target_name).dex.jar',

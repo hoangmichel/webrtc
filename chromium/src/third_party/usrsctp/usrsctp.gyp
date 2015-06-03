@@ -28,7 +28,7 @@
           'SCTP_USE_OPENSSL_SHA1',
         ],
         'dependencies': [
-          '<(DEPTH)/third_party/boringssl/boringssl.gyp:boringssl',
+          '<(peeracle_webrtc_root)/third_party/boringssl/boringssl.gyp:boringssl',
         ],
       },
       {  # else use_openssl==0, use NSS.
@@ -38,13 +38,13 @@
         'conditions': [
           ['os_posix == 1 and OS != "mac" and OS != "ios" and OS != "android"', {
             'dependencies': [  # The system.gyp:ssl dependency includes nss
-              '<(DEPTH)/build/linux/system.gyp:ssl',
+              '<(peeracle_webrtc_root)/build/linux/system.gyp:ssl',
             ],
           }],
           ['OS == "mac" or OS == "ios" or OS == "win"', {
             'dependencies': [
-              '<(DEPTH)/third_party/nss/nss.gyp:nspr',
-              '<(DEPTH)/third_party/nss/nss.gyp:nss',
+              '<(peeracle_webrtc_root)/third_party/nss/nss.gyp:nspr',
+              '<(peeracle_webrtc_root)/third_party/nss/nss.gyp:nss',
             ],
           }],
         ],

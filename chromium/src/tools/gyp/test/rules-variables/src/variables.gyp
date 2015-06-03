@@ -11,7 +11,7 @@
     # run. When it does run, the cygwin path is wrong, so the do-nothing step
     # fails.
     # TODO: Investigate and fix whatever's actually failing and remove this.
-    'msvs_cygwin_dirs': ['../../../../../../<(DEPTH)/third_party/cygwin'],
+    'msvs_cygwin_dirs': ['../../../../../../<(peeracle_webrtc_root)/third_party/cygwin'],
   },
   'targets': [
     {

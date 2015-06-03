@@ -50,8 +50,8 @@
         'jinja_args': [],
       },
       'inputs': [
-        '<(DEPTH)/build/android/gyp/util/build_utils.py',
-        '<(DEPTH)/build/android/gyp/jinja_template.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/jinja_template.py',
         '<@(jinja_inputs)',
         '<@(jinja_includes)',
       ],
@@ -75,7 +75,7 @@
         }],
       ],
       'action': [
-        'python', '<(DEPTH)/build/android/gyp/jinja_template.py',
+        'python', '<(peeracle_webrtc_root)/build/android/gyp/jinja_template.py',
         '--inputs', '<(jinja_inputs)',
         '--variables', '<(jinja_variables)',
         '<@(jinja_args)',

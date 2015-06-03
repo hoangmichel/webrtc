@@ -59,7 +59,7 @@
 
 {
   'variables': {
-    'protoc_wrapper': '<(DEPTH)/tools/protoc_wrapper/protoc_wrapper.py',
+    'protoc_wrapper': '<(peeracle_webrtc_root)/tools/protoc_wrapper/protoc_wrapper.py',
     'cc_dir': '<(SHARED_INTERMEDIATE_DIR)/protoc_out/<(proto_out_dir)',
     'py_dir': '<(PRODUCT_DIR)/pyproto/<(proto_out_dir)',
     'cc_generator_options%': '',
@@ -110,23 +110,23 @@
     },
   ],
   'dependencies': [
-    '<(DEPTH)/third_party/protobuf/protobuf.gyp:protoc#host',
-    '<(DEPTH)/third_party/protobuf/protobuf.gyp:protobuf_lite',
+    '<(peeracle_webrtc_root)/third_party/protobuf/protobuf.gyp:protoc#host',
+    '<(peeracle_webrtc_root)/third_party/protobuf/protobuf.gyp:protobuf_lite',
   ],
   'include_dirs': [
     '<(SHARED_INTERMEDIATE_DIR)/protoc_out',
-    '<(DEPTH)',
+    '<(peeracle_webrtc_root)',
   ],
   'direct_dependent_settings': {
     'include_dirs': [
       '<(SHARED_INTERMEDIATE_DIR)/protoc_out',
-      '<(DEPTH)',
+      '<(peeracle_webrtc_root)',
     ]
   },
   'export_dependent_settings': [
     # The generated headers reference headers within protobuf_lite,
     # so dependencies must be able to find those headers too.
-    '<(DEPTH)/third_party/protobuf/protobuf.gyp:protobuf_lite',
+    '<(peeracle_webrtc_root)/third_party/protobuf/protobuf.gyp:protobuf_lite',
   ],
   # This target exports a hard dependency because it generates header
   # files.

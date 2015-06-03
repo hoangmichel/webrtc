@@ -15,7 +15,7 @@
       'dependencies': [
         'rtp_rtcp',
         '<(webrtc_root)/test/test.gyp:test_support_main',
-        '<(DEPTH)/testing/gtest.gyp:gtest',
+        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
       ],
       'sources': [
         'test_packet_masks_metrics.cc',

@@ -34,7 +34,7 @@
   'actions': [
     {
       'variables': {
-        'generator_path': '<(DEPTH)/tools/generate_shim_headers/generate_shim_headers.py',
+        'generator_path': '<(peeracle_webrtc_root)/tools/generate_shim_headers/generate_shim_headers.py',
         'generator_args': [
           '--headers-root', '<(headers_root_path)',
           '--output-directory', '<(shim_headers_path)',

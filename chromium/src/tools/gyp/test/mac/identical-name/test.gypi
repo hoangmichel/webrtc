@@ -1,7 +1,7 @@
 {
   'target_defaults': {
     'xcode_settings': {
-      'SYMROOT': '<(DEPTH)/$SRCROOT/',
+      'SYMROOT': '<(peeracle_webrtc_root)/$SRCROOT/',
     },
   },
 }

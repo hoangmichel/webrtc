@@ -38,9 +38,9 @@
   'action_name': 'apkbuilder_<(apk_name)',
   'message': 'Packaging <(apk_name)',
   'inputs': [
-    '<(DEPTH)/build/android/ant/apk-package.xml',
-    '<(DEPTH)/build/android/gyp/util/build_utils.py',
-    '<(DEPTH)/build/android/gyp/ant.py',
+    '<(peeracle_webrtc_root)/build/android/ant/apk-package.xml',
+    '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+    '<(peeracle_webrtc_root)/build/android/gyp/ant.py',
     '<(resource_packaged_apk_path)',
     '<@(extra_inputs)',
     '>@(package_input_paths)',
@@ -58,7 +58,7 @@
     }],
   ],
   'action': [
-    'python', '<(DEPTH)/build/android/gyp/ant.py',
+    'python', '<(peeracle_webrtc_root)/build/android/gyp/ant.py',
     '--',
     '-quiet',
     '-DHAS_CODE=<(has_code_str)',
@@ -74,6 +74,6 @@
     '-DEMMA_DEVICE_JAR=<(emma_device_jar)',
     '-Dbasedir=.',
     '-buildfile',
-    '<(DEPTH)/build/android/ant/apk-package.xml',
+    '<(peeracle_webrtc_root)/build/android/ant/apk-package.xml',
   ]
 }

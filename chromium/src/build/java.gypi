@@ -48,7 +48,7 @@
 
 {
   'dependencies': [
-    '<(DEPTH)/build/android/setup.gyp:build_output_dirs'
+    '<(peeracle_webrtc_root)/build/android/setup.gyp:build_output_dirs'
   ],
   'variables': {
     'add_to_dependents_classpaths%': 1,
@@ -152,7 +152,7 @@
           'action_name': 'process_resources',
           'message': 'processing resources for <(_target_name)',
           'variables': {
-            'android_manifest': '<(DEPTH)/build/android/AndroidManifest.xml',
+            'android_manifest': '<(peeracle_webrtc_root)/build/android/AndroidManifest.xml',
             # Write the inputs list to a file, so that its mtime is updated when
             # the list of inputs changes.
             'inputs_list_file': '>|(java_resources.<(_target_name).gypcmd >@(resource_input_paths))',
@@ -167,9 +167,9 @@
             ],
           },
           'inputs': [
-            '<(DEPTH)/build/android/gyp/util/build_utils.py',
-            '<(DEPTH)/build/android/gyp/process_resources.py',
-            '<(DEPTH)/build/android/gyp/generate_v14_compatible_resources.py',
+            '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+            '<(peeracle_webrtc_root)/build/android/gyp/process_resources.py',
+            '<(peeracle_webrtc_root)/build/android/gyp/generate_v14_compatible_resources.py',
             '>@(resource_input_paths)',
             '>@(dependencies_res_zip_paths)',
             '>(inputs_list_file)',
@@ -178,7 +178,7 @@
             '<(resource_zip_path)',
           ],
           'action': [
-            'python', '<(DEPTH)/build/android/gyp/process_resources.py',
+            'python', '<(peeracle_webrtc_root)/build/android/gyp/process_resources.py',
             '--android-sdk', '<(android_sdk)',
             '--android-sdk-tools', '<(android_sdk_tools)',
             '--non-constant-id',
@@ -204,8 +204,8 @@
           'message': 'Proguard preprocessing <(_target_name) jar',
           'inputs': [
             '<(android_sdk_root)/tools/proguard/lib/proguard.jar',
-            '<(DEPTH)/build/android/gyp/util/build_utils.py',
-            '<(DEPTH)/build/android/gyp/proguard.py',
+            '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+            '<(peeracle_webrtc_root)/build/android/gyp/proguard.py',
             '<(javac_jar_path)',
             '<(proguard_config)',
           ],
@@ -213,7 +213,7 @@
             '<(jar_path)',
           ],
           'action': [
-            'python', '<(DEPTH)/build/android/gyp/proguard.py',
+            'python', '<(peeracle_webrtc_root)/build/android/gyp/proguard.py',
             '--proguard-path=<(android_sdk_root)/tools/proguard/lib/proguard.jar',
             '--input-path=<(javac_jar_path)',
             '--output-path=<(jar_path)',
@@ -229,9 +229,9 @@
           'action_name': 'findbugs_<(_target_name)',
           'message': 'Running findbugs on <(_target_name)',
           'inputs': [
-            '<(DEPTH)/build/android/findbugs_diff.py',
-            '<(DEPTH)/build/android/findbugs_filter/findbugs_exclude.xml',
-            '<(DEPTH)/build/android/pylib/utils/findbugs.py',
+            '<(peeracle_webrtc_root)/build/android/findbugs_diff.py',
+            '<(peeracle_webrtc_root)/build/android/findbugs_filter/findbugs_exclude.xml',
+            '<(peeracle_webrtc_root)/build/android/pylib/utils/findbugs.py',
             '>@(input_jars_paths)',
             '<(jar_final_path)',
             '<(compile_stamp)',
@@ -240,7 +240,7 @@
             '<(findbugs_stamp)',
           ],
           'action': [
-            'python', '<(DEPTH)/build/android/findbugs_diff.py',
+            'python', '<(peeracle_webrtc_root)/build/android/findbugs_diff.py',
             '--auxclasspath-gyp', '>(input_jars_paths)',
             '--stamp', '<(findbugs_stamp)',
             '<(jar_final_path)',
@@ -257,8 +257,8 @@
         'java_sources': ['>!@(find >(java_in_dir)/src >(additional_src_dirs) -name "*.java")'],
       },
       'inputs': [
-        '<(DEPTH)/build/android/gyp/util/build_utils.py',
-        '<(DEPTH)/build/android/gyp/javac.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/javac.py',
         '>@(java_sources)',
         '>@(input_jars_paths)',
         '>@(additional_input_paths)',
@@ -268,7 +268,7 @@
         '<(javac_jar_path)',
       ],
       'action': [
-        'python', '<(DEPTH)/build/android/gyp/javac.py',
+        'python', '<(peeracle_webrtc_root)/build/android/gyp/javac.py',
         '--classpath=>(input_jars_paths)',
         '--src-gendirs=>(generated_src_dirs)',
         '--javac-includes=<(javac_includes)',
@@ -320,16 +320,16 @@
       'action_name': 'jar_toc_<(_target_name)',
       'message': 'Creating <(_target_name) jar.TOC',
       'inputs': [
-        '<(DEPTH)/build/android/gyp/util/build_utils.py',
-        '<(DEPTH)/build/android/gyp/util/md5_check.py',
-        '<(DEPTH)/build/android/gyp/jar_toc.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/util/md5_check.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/jar_toc.py',
         '<(jar_final_path)',
       ],
       'outputs': [
         '<(jar_final_path).TOC',
       ],
       'action': [
-        'python', '<(DEPTH)/build/android/gyp/jar_toc.py',
+        'python', '<(peeracle_webrtc_root)/build/android/gyp/jar_toc.py',
         '--jar-path=<(jar_final_path)',
         '--toc-path=<(jar_final_path).TOC',
       ]

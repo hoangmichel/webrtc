@@ -39,7 +39,7 @@
 
 {
   'dependencies': [
-    '<(DEPTH)/build/android/setup.gyp:build_output_dirs',
+    '<(peeracle_webrtc_root)/build/android/setup.gyp:build_output_dirs',
   ],
   'variables': {
     'classes_dir': '<(intermediate_dir)/classes',
@@ -79,8 +79,8 @@
         ],
       },
       'inputs': [
-        '<(DEPTH)/build/android/gyp/util/build_utils.py',
-        '<(DEPTH)/build/android/gyp/javac.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/javac.py',
         '^@(java_sources)',
         '>@(input_jars_paths)',
       ],
@@ -89,7 +89,7 @@
         '<(stamp)',
       ],
       'action': [
-        'python', '<(DEPTH)/build/android/gyp/javac.py',
+        'python', '<(peeracle_webrtc_root)/build/android/gyp/javac.py',
         '--classpath=>(input_jars_paths)',
         '--src-gendirs=>(generated_src_dirs)',
         '--chromium-code=<(chromium_code)',
@@ -110,14 +110,14 @@
             'output': '<(PRODUCT_DIR)/bin/<(_target_name)',
           },
           'inputs': [
-            '<(DEPTH)/build/android/gyp/create_java_binary_script.py',
+            '<(peeracle_webrtc_root)/build/android/gyp/create_java_binary_script.py',
             '<(jar_path)',
           ],
           'outputs': [
             '<(output)',
           ],
           'action': [
-            'python', '<(DEPTH)/build/android/gyp/create_java_binary_script.py',
+            'python', '<(peeracle_webrtc_root)/build/android/gyp/create_java_binary_script.py',
             '--classpath=>(input_jars_paths)',
             '--jar-path=<(jar_path)',
             '--output=<(output)',

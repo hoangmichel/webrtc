@@ -52,7 +52,7 @@
       ],
       'xcode_settings': {
         'LIBRARY_SEARCH_PATHS': [
-          '<(DEPTH)/secret_location',
+          '<(peeracle_webrtc_root)/secret_location',
         ],
       },
       'link_settings': {

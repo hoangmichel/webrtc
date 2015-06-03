@@ -46,14 +46,14 @@
       'extension': 'isolate',
       'inputs': [
         # Files that are known to be involved in this step.
-        '<(DEPTH)/tools/isolate_driver.py',
-        '<(DEPTH)/tools/swarming_client/isolate.py',
-        '<(DEPTH)/tools/swarming_client/run_isolated.py',
+        '<(peeracle_webrtc_root)/tools/isolate_driver.py',
+        '<(peeracle_webrtc_root)/tools/swarming_client/isolate.py',
+        '<(peeracle_webrtc_root)/tools/swarming_client/run_isolated.py',
       ],
       'outputs': [],
       'action': [
         'python',
-        '<(DEPTH)/tools/isolate_driver.py',
+        '<(peeracle_webrtc_root)/tools/isolate_driver.py',
         '<(test_isolation_mode)',
         '--isolated', '<(PRODUCT_DIR)/<(RULE_INPUT_ROOT).isolated',
         '--isolate', '<(RULE_INPUT_PATH)',
@@ -64,7 +64,7 @@
 
         # Path variables are used to replace file paths when loading a .isolate
         # file
-        '--path-variable', 'DEPTH', '<(DEPTH)',
+        '--path-variable', 'peeracle_webrtc_root', '<(peeracle_webrtc_root)',
         '--path-variable', 'PRODUCT_DIR', '<(PRODUCT_DIR) ',
 
         # Extra variables are replaced on the 'command' entry and on paths in

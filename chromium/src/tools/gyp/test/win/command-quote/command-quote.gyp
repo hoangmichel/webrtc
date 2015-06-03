@@ -4,7 +4,7 @@
 
 {
   'target_defaults': {
-    'msvs_cygwin_dirs': ['../../../../../<(DEPTH)/third_party/cygwin'],
+    'msvs_cygwin_dirs': ['../../../../../<(peeracle_webrtc_root)/third_party/cygwin'],
   },
   'targets': [
     {

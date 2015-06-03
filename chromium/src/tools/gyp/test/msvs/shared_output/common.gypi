@@ -8,7 +8,7 @@
     'configurations': {
       'Baz': {
         'msvs_configuration_attributes': {
-          'OutputDirectory': '<(DEPTH)/foo',
+          'OutputDirectory': '<(peeracle_webrtc_root)/foo',
           'IntermediateDirectory': '$(OutDir)/bar',
         },
       },

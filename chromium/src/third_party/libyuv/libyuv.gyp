@@ -102,11 +102,11 @@
             # Caveat system jpeg support may not support motion jpeg
             [ 'use_system_libjpeg == 1', {
               'dependencies': [
-                 '<(DEPTH)/third_party/libjpeg/libjpeg.gyp:libjpeg',
+                 '<(peeracle_webrtc_root)/third_party/libjpeg/libjpeg.gyp:libjpeg',
               ],
             }, {
               'dependencies': [
-                 '<(DEPTH)/third_party/libjpeg_turbo/libjpeg.gyp:libjpeg',
+                 '<(peeracle_webrtc_root)/third_party/libjpeg_turbo/libjpeg.gyp:libjpeg',
               ],
             }],
             [ 'use_system_libjpeg == 1', {

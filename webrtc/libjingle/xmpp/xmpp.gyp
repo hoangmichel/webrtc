@@ -109,10 +109,10 @@
       'conditions': [
         ['build_expat==1', {
           'dependencies': [
-            '<(DEPTH)/third_party/expat/expat.gyp:expat',
+            '<(peeracle_webrtc_root)/third_party/expat/expat.gyp:expat',
           ],
           'export_dependent_settings': [
-            '<(DEPTH)/third_party/expat/expat.gyp:expat',
+            '<(peeracle_webrtc_root)/third_party/expat/expat.gyp:expat',
           ],
         }],
         ['build_with_chromium==0', {

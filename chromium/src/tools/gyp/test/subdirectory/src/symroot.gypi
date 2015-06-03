@@ -9,7 +9,7 @@
   'conditions': [
     ['set_symroot == 1', {
       'xcode_settings': {
-        'SYMROOT': '<(DEPTH)/build',
+        'SYMROOT': '<(peeracle_webrtc_root)/build',
       },
     }],
   ],

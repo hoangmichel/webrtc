@@ -7,12 +7,12 @@
     'configurations': {
       'Default': {
         'msvs_configuration_attributes': {
-          'OutputDirectory': '<(DEPTH)\\builddir/Default',
+          'OutputDirectory': '<(peeracle_webrtc_root)\\builddir/Default',
         },
       },
     },
   },
   'xcode_settings': {
-    'SYMROOT': '<(DEPTH)/builddir',
+    'SYMROOT': '<(peeracle_webrtc_root)/builddir',
   },
 }

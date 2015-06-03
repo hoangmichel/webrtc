@@ -34,7 +34,7 @@
 {
   # Location where all generated Java sources will be placed.
   'variables': {
-    'include_path%': '<(DEPTH)',
+    'include_path%': '<(peeracle_webrtc_root)',
     'output_dir': '<(SHARED_INTERMEDIATE_DIR)/templates/<(_target_name)/<(package_name)',
   },
   'direct_dependent_settings': {
@@ -62,15 +62,15 @@
         'output_path': '<(output_dir)/<(RULE_INPUT_ROOT).java',
       },
       'inputs': [
-        '<(DEPTH)/build/android/gyp/util/build_utils.py',
-        '<(DEPTH)/build/android/gyp/gcc_preprocess.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/gcc_preprocess.py',
         '<@(template_deps)'
       ],
       'outputs': [
         '<(output_path)',
       ],
       'action': [
-        'python', '<(DEPTH)/build/android/gyp/gcc_preprocess.py',
+        'python', '<(peeracle_webrtc_root)/build/android/gyp/gcc_preprocess.py',
         '--include-path=<(include_path)',
         '--output=<(output_path)',
         '--template=<(RULE_INPUT_PATH)',

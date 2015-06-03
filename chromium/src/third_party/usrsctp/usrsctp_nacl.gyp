@@ -16,8 +16,8 @@
         'build_pnacl_newlib': 1,
       },
       'dependencies': [
-        '<(DEPTH)/native_client_sdk/native_client_sdk_untrusted.gyp:nacl_io_untrusted',
-        '<(DEPTH)/third_party/boringssl/boringssl_nacl.gyp:boringssl_nacl',
+        '<(peeracle_webrtc_root)/native_client_sdk/native_client_sdk_untrusted.gyp:nacl_io_untrusted',
+        '<(peeracle_webrtc_root)/third_party/boringssl/boringssl_nacl.gyp:boringssl_nacl',
       ],
       'sources': [
         # Note: sources list duplicated in GN build.

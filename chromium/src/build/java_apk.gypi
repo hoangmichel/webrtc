@@ -78,7 +78,7 @@
     'proguard_enabled%': 'false',
     'proguard_flags_paths': ['<(generated_proguard_file)'],
     'jar_name': 'chromium_apk_<(_target_name).jar',
-    'resource_dir%':'<(DEPTH)/build/android/ant/empty/res',
+    'resource_dir%':'<(peeracle_webrtc_root)/build/android/ant/empty/res',
     'R_package%':'',
     'include_all_resources%': 0,
     'additional_R_text_files': [],
@@ -94,7 +94,7 @@
     'package_input_paths': [],
     'ordered_libraries_file': '<(intermediate_dir)/native_libraries.json',
     'additional_ordered_libraries_file': '<(intermediate_dir)/additional_native_libraries.json',
-    'native_libraries_template': '<(DEPTH)/base/android/java/templates/NativeLibraries.template',
+    'native_libraries_template': '<(peeracle_webrtc_root)/base/android/java/templates/NativeLibraries.template',
     'native_libraries_java_dir': '<(intermediate_dir)/native_libraries_java/',
     'native_libraries_java_file': '<(native_libraries_java_dir)/NativeLibraries.java',
     'native_libraries_java_stamp': '<(intermediate_dir)/native_libraries_java.stamp',
@@ -215,12 +215,12 @@
     }],
     ['native_lib_target != "" and component == "shared_library"', {
       'dependencies': [
-        '<(DEPTH)/build/android/setup.gyp:copy_system_libraries',
+        '<(peeracle_webrtc_root)/build/android/setup.gyp:copy_system_libraries',
       ],
     }],
     ['use_chromium_linker == 1', {
       'dependencies': [
-        '<(DEPTH)/base/base.gyp:chromium_android_linker',
+        '<(peeracle_webrtc_root)/base/base.gyp:chromium_android_linker',
       ],
     }],
     ['native_lib_target != ""', {
@@ -314,8 +314,8 @@
           },
           'message': 'Creating NativeLibraries.java for <(_target_name)',
           'inputs': [
-            '<(DEPTH)/build/android/gyp/util/build_utils.py',
-            '<(DEPTH)/build/android/gyp/gcc_preprocess.py',
+            '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+            '<(peeracle_webrtc_root)/build/android/gyp/gcc_preprocess.py',
             '<(ordered_libraries_file)',
             '<(native_libraries_template)',
           ],
@@ -323,7 +323,7 @@
             '<(native_libraries_java_stamp)',
           ],
           'action': [
-            'python', '<(DEPTH)/build/android/gyp/gcc_preprocess.py',
+            'python', '<(peeracle_webrtc_root)/build/android/gyp/gcc_preprocess.py',
             '--include-path=',
             '--output=<(native_libraries_java_file)',
             '--template=<(native_libraries_template)',
@@ -418,13 +418,13 @@
             ],
           },
           'inputs': [
-            '<(DEPTH)/build/android/gyp/create_placeholder_files.py',
+            '<(peeracle_webrtc_root)/build/android/gyp/create_placeholder_files.py',
           ],
           'outputs': [
             '<(native_lib_placeholder_stamp)',
           ],
           'action': [
-            'python', '<(DEPTH)/build/android/gyp/create_placeholder_files.py',
+            'python', '<(peeracle_webrtc_root)/build/android/gyp/create_placeholder_files.py',
             '--dest-lib-dir=<(apk_package_native_libs_dir)/<(android_app_abi)/',
             '--stamp=<(native_lib_placeholder_stamp)',
             '<@(placeholders)',
@@ -440,8 +440,8 @@
             'configuration_name': '<(CONFIGURATION_NAME)',
           },
           'dependencies': [
-            '<(DEPTH)/build/android/setup.gyp:get_build_device_configurations',
-            '<(DEPTH)/build/android/pylib/device/commands/commands.gyp:chromium_commands',
+            '<(peeracle_webrtc_root)/build/android/setup.gyp:get_build_device_configurations',
+            '<(peeracle_webrtc_root)/build/android/pylib/device/commands/commands.gyp:chromium_commands',
           ],
           'actions': [
             {
@@ -451,8 +451,8 @@
               'action_name': 'create device library symlinks',
               'message': 'Creating links on device for <(_target_name)',
               'inputs': [
-                '<(DEPTH)/build/android/gyp/util/build_utils.py',
-                '<(DEPTH)/build/android/gyp/create_device_library_links.py',
+                '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+                '<(peeracle_webrtc_root)/build/android/gyp/create_device_library_links.py',
                 '<(apk_install_record)',
                 '<(build_device_config_path)',
                 '<(ordered_libraries_file)',
@@ -461,7 +461,7 @@
                 '<(link_stamp)'
               ],
               'action': [
-                'python', '<(DEPTH)/build/android/gyp/create_device_library_links.py',
+                'python', '<(peeracle_webrtc_root)/build/android/gyp/create_device_library_links.py',
                 '--build-device-configuration=<(build_device_config_path)',
                 '--libraries=@FileArg(<(ordered_libraries_file):libraries)',
                 '--script-host-path=<(symlink_script_host_path)',
@@ -517,7 +517,7 @@
         },
       ],
       'dependencies': [
-        '<(DEPTH)/build/android/rezip.gyp:rezip_apk_jar',
+        '<(peeracle_webrtc_root)/build/android/rezip.gyp:rezip_apk_jar',
       ],
     }],
     ['gyp_managed_install == 1', {
@@ -534,8 +534,8 @@
           'action_name': 'apk_install_<(_target_name)',
           'message': 'Installing <(apk_name).apk',
           'inputs': [
-            '<(DEPTH)/build/android/gyp/util/build_utils.py',
-            '<(DEPTH)/build/android/gyp/apk_install.py',
+            '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+            '<(peeracle_webrtc_root)/build/android/gyp/apk_install.py',
             '<(build_device_config_path)',
             '<(incomplete_apk_path)',
           ],
@@ -543,7 +543,7 @@
             '<(apk_install_record)',
           ],
           'action': [
-            'python', '<(DEPTH)/build/android/gyp/apk_install.py',
+            'python', '<(peeracle_webrtc_root)/build/android/gyp/apk_install.py',
             '--apk-path=<(incomplete_apk_path)',
             '--build-device-configuration=<(build_device_config_path)',
             '--install-record=<(apk_install_record)',
@@ -552,13 +552,13 @@
         },
       ],
       'dependencies': [
-        '<(DEPTH)/build/android/rezip.gyp:rezip_apk_jar',
+        '<(peeracle_webrtc_root)/build/android/rezip.gyp:rezip_apk_jar',
       ],
     }],
     ['is_test_apk == 1', {
       'dependencies': [
-        '<(DEPTH)/build/android/pylib/device/commands/commands.gyp:chromium_commands',
-        '<(DEPTH)/tools/android/android_tools.gyp:android_tools',
+        '<(peeracle_webrtc_root)/build/android/pylib/device/commands/commands.gyp:chromium_commands',
+        '<(peeracle_webrtc_root)/tools/android/android_tools.gyp:android_tools',
       ]
     }],
     ['run_findbugs == 1', {
@@ -567,9 +567,9 @@
           'action_name': 'findbugs_<(_target_name)',
           'message': 'Running findbugs on <(_target_name)',
           'inputs': [
-            '<(DEPTH)/build/android/findbugs_diff.py',
-            '<(DEPTH)/build/android/findbugs_filter/findbugs_exclude.xml',
-            '<(DEPTH)/build/android/pylib/utils/findbugs.py',
+            '<(peeracle_webrtc_root)/build/android/findbugs_diff.py',
+            '<(peeracle_webrtc_root)/build/android/findbugs_filter/findbugs_exclude.xml',
+            '<(peeracle_webrtc_root)/build/android/pylib/utils/findbugs.py',
             '>@(input_jars_paths)',
             '<(jar_path)',
             '<(compile_stamp)',
@@ -578,7 +578,7 @@
             '<(findbugs_stamp)',
           ],
           'action': [
-            'python', '<(DEPTH)/build/android/findbugs_diff.py',
+            'python', '<(peeracle_webrtc_root)/build/android/findbugs_diff.py',
             '--auxclasspath-gyp', '>(input_jars_paths)',
             '--stamp', '<(findbugs_stamp)',
             '<(jar_path)',
@@ -589,7 +589,7 @@
     ]
   ],
   'dependencies': [
-    '<(DEPTH)/tools/android/md5sum/md5sum.gyp:md5sum',
+    '<(peeracle_webrtc_root)/tools/android/md5sum/md5sum.gyp:md5sum',
   ],
   'actions': [
     {
@@ -623,8 +623,8 @@
         ],
       },
       'inputs': [
-        '<(DEPTH)/build/android/gyp/util/build_utils.py',
-        '<(DEPTH)/build/android/gyp/process_resources.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/process_resources.py',
         '<(android_manifest_path)',
         '>@(additional_input_paths)',
         '>@(resource_input_paths)',
@@ -637,7 +637,7 @@
         '<(codegen_stamp)',
       ],
       'action': [
-        'python', '<(DEPTH)/build/android/gyp/process_resources.py',
+        'python', '<(peeracle_webrtc_root)/build/android/gyp/process_resources.py',
         '--android-sdk', '<(android_sdk)',
         '--android-sdk-tools', '<(android_sdk_tools)',
 
@@ -681,8 +681,8 @@
 
       },
       'inputs': [
-        '<(DEPTH)/build/android/gyp/util/build_utils.py',
-        '<(DEPTH)/build/android/gyp/javac.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/javac.py',
         '>@(java_sources)',
         '>@(input_jars_paths)',
         '<(codegen_stamp)',
@@ -697,7 +697,7 @@
         '<(javac_jar_path)',
       ],
       'action': [
-        'python', '<(DEPTH)/build/android/gyp/javac.py',
+        'python', '<(peeracle_webrtc_root)/build/android/gyp/javac.py',
         '--classpath=>(input_jars_paths) <(android_sdk_jar)',
         '--src-gendirs=>(gen_src_dirs)',
         '--javac-includes=<(javac_includes)',
@@ -786,8 +786,8 @@
         }],
       ],
       'inputs': [
-        '<(DEPTH)/build/android/gyp/apk_obfuscate.py',
-        '<(DEPTH)/build/android/gyp/util/build_utils.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/apk_obfuscate.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
         '>@(proguard_flags_paths)',
         '>@(obfuscate_input_jars_paths)',
         '>@(additional_obfuscate_input_paths)',
@@ -805,7 +805,7 @@
         '<(obfuscated_jar_path).usage',
       ],
       'action': [
-        'python', '<(DEPTH)/build/android/gyp/apk_obfuscate.py',
+        'python', '<(peeracle_webrtc_root)/build/android/gyp/apk_obfuscate.py',
 
         '--configuration-name', '<(CONFIGURATION_NAME)',
 

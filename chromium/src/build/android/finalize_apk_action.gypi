@@ -19,15 +19,15 @@
 {
   'message': 'Signing/aligning <(_target_name) APK: <(input_apk_path)',
   'variables': {
-    'keystore_path%': '<(DEPTH)/build/android/ant/chromium-debug.keystore',
+    'keystore_path%': '<(peeracle_webrtc_root)/build/android/ant/chromium-debug.keystore',
     'keystore_name%': 'chromiumdebugkey',
     'keystore_password%': 'chromium',
     'zipalign_path%': '<(android_sdk_tools)/zipalign',
     'rezip_apk_jar_path%': '<(PRODUCT_DIR)/lib.java/rezip_apk.jar',
   },
   'inputs': [
-    '<(DEPTH)/build/android/gyp/finalize_apk.py',
-    '<(DEPTH)/build/android/gyp/util/build_utils.py',
+    '<(peeracle_webrtc_root)/build/android/gyp/finalize_apk.py',
+    '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
     '<(keystore_path)',
     '<(input_apk_path)',
   ],
@@ -35,7 +35,7 @@
     '<(output_apk_path)',
   ],
   'action': [
-    'python', '<(DEPTH)/build/android/gyp/finalize_apk.py',
+    'python', '<(peeracle_webrtc_root)/build/android/gyp/finalize_apk.py',
     '--zipalign-path=<(zipalign_path)',
     '--unsigned-apk-path=<(input_apk_path)',
     '--final-apk-path=<(output_apk_path)',

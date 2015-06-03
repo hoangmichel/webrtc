@@ -28,8 +28,8 @@
           # This setting should only be used to depend on third party prebuilt
           # libraries that are stored as binaries at a known location.
           'AdditionalLibraryDirectories': [
-            '<(DEPTH)/out/Default/obj/subdir', # ninja style
-            '<(DEPTH)/subdir/Default/lib', # msvs style
+            '<(peeracle_webrtc_root)/out/Default/obj/subdir', # ninja style
+            '<(peeracle_webrtc_root)/subdir/Default/lib', # msvs style
           ],
           'AdditionalDependencies': [
             'test_lib.lib',

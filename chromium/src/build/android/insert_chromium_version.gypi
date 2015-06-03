@@ -26,8 +26,8 @@
     'input_paths': [],
   },
   'inputs': [
-    '<(DEPTH)/build/android/gyp/util/build_utils.py',
-    '<(DEPTH)/build/android/gyp/insert_chromium_version.py',
+    '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
+    '<(peeracle_webrtc_root)/build/android/gyp/insert_chromium_version.py',
     '<(ordered_libraries_file)',
     '>@(input_paths)',
   ],
@@ -35,7 +35,7 @@
     '<(stamp)',
   ],
   'action': [
-    'python', '<(DEPTH)/build/android/gyp/insert_chromium_version.py',
+    'python', '<(peeracle_webrtc_root)/build/android/gyp/insert_chromium_version.py',
     '--android-objcopy=<(android_objcopy)',
     '--stripped-libraries-dir=<(stripped_libraries_dir)',
     '--libraries=@FileArg(<(ordered_libraries_file):libraries)',

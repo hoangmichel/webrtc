@@ -62,7 +62,7 @@
           'conditions': [
             ['build_icu==1', {
               'dependencies': [
-                '<(DEPTH)/third_party/icu/icu.gyp:icuuc',
+                '<(peeracle_webrtc_root)/third_party/icu/icu.gyp:icuuc',
               ],
             }],
             ['OS=="linux"', {
@@ -169,7 +169,7 @@
                 ['OS=="android"', {
                   'variables': {
                     'java_files': ['<@(peerconnection_java_files)', '<@(android_java_files)'],
-                    'build_classpath': '<(java_src_dir):<(DEPTH)/third_party/android_tools/sdk/platforms/android-<(android_sdk_version)/android.jar',
+                    'build_classpath': '<(java_src_dir):<(peeracle_webrtc_root)/third_party/android_tools/sdk/platforms/android-<(android_sdk_version)/android.jar',
                   },
                 }, {
                   'variables': {
@@ -304,13 +304,13 @@
           ],
           'direct_dependent_settings': {
             'include_dirs': [
-              '<(DEPTH)/talk/app/webrtc/objc/public',
+              '<(peeracle_webrtc_root)/talk/app/webrtc/objc/public',
             ],
           },
           'include_dirs': [
-            '<(DEPTH)/talk/app/webrtc',
-            '<(DEPTH)/talk/app/webrtc/objc',
-            '<(DEPTH)/talk/app/webrtc/objc/public',
+            '<(peeracle_webrtc_root)/talk/app/webrtc',
+            '<(peeracle_webrtc_root)/talk/app/webrtc/objc',
+            '<(peeracle_webrtc_root)/talk/app/webrtc/objc/public',
           ],
           'link_settings': {
             'libraries': [
@@ -385,18 +385,18 @@
       'conditions': [
         ['build_json==1', {
           'dependencies': [
-            '<(DEPTH)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
+            '<(peeracle_webrtc_root)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
           ],
           'export_dependent_settings': [
-            '<(DEPTH)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
+            '<(peeracle_webrtc_root)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
           ],
         }],
         ['build_expat==1', {
           'dependencies': [
-            '<(DEPTH)/third_party/expat/expat.gyp:expat',
+            '<(peeracle_webrtc_root)/third_party/expat/expat.gyp:expat',
           ],
           'export_dependent_settings': [
-            '<(DEPTH)/third_party/expat/expat.gyp:expat',
+            '<(peeracle_webrtc_root)/third_party/expat/expat.gyp:expat',
           ],
         }],
       ],
@@ -505,16 +505,16 @@
       ],
       'conditions': [
         ['build_libyuv==1', {
-          'dependencies': ['<(DEPTH)/third_party/libyuv/libyuv.gyp:libyuv',],
+          'dependencies': ['<(peeracle_webrtc_root)/third_party/libyuv/libyuv.gyp:libyuv',],
         }],
         ['build_usrsctp==1', {
           'include_dirs': [
             # TODO(jiayl): move this into the direct_dependent_settings of
             # usrsctp.gyp.
-            '<(DEPTH)/third_party/usrsctp',
+            '<(peeracle_webrtc_root)/third_party/usrsctp',
           ],
           'dependencies': [
-            '<(DEPTH)/third_party/usrsctp/usrsctp.gyp:usrsctplib',
+            '<(peeracle_webrtc_root)/third_party/usrsctp/usrsctp.gyp:usrsctplib',
           ],
         }],
         ['build_with_chromium==1', {
@@ -650,16 +650,16 @@
       'conditions': [
         ['build_libsrtp==1', {
           'dependencies': [
-            '<(DEPTH)/third_party/libsrtp/libsrtp.gyp:libsrtp',
+            '<(peeracle_webrtc_root)/third_party/libsrtp/libsrtp.gyp:libsrtp',
           ],
         }],
       ],
       'include_dirs': [
-        '<(DEPTH)/testing/gtest/include',
+        '<(peeracle_webrtc_root)/testing/gtest/include',
       ],
       'direct_dependent_settings': {
         'include_dirs': [
-          '<(DEPTH)/testing/gtest/include',
+          '<(peeracle_webrtc_root)/testing/gtest/include',
         ],
       },
       'sources': [

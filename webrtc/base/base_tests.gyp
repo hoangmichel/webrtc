@@ -29,7 +29,7 @@
       ],
       'dependencies': [
         'base.gyp:rtc_base',
-        '<(DEPTH)/testing/gtest.gyp:gtest',
+        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
       ],
       'direct_dependent_settings': {
         'defines': [
@@ -37,7 +37,7 @@
         ],
       },
       'export_dependent_settings': [
-        '<(DEPTH)/testing/gtest.gyp:gtest',
+        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
       ],
     },
     {

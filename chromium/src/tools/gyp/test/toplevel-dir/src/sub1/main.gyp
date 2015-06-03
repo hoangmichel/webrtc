@@ -8,7 +8,7 @@
       'target_name': 'prog1',
       'type': 'executable',
       'dependencies': [
-        '<(DEPTH)/../sub2/prog2.gyp:prog2',
+        '<(peeracle_webrtc_root)/../sub2/prog2.gyp:prog2',
       ],
       'sources': [
         'prog1.c',

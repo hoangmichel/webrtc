@@ -23,7 +23,7 @@
   'variables': {
     # Location where all generated Java sources will be placed.
     'output_dir': '<(SHARED_INTERMEDIATE_DIR)/enums/<(_target_name)',
-    'generator_path': '<(DEPTH)/build/android/gyp/java_cpp_enum.py',
+    'generator_path': '<(peeracle_webrtc_root)/build/android/gyp/java_cpp_enum.py',
     'generator_args': '<(output_dir) <(source_file)',
   },
   'direct_dependent_settings': {
@@ -44,7 +44,7 @@
     {
       'action_name': 'generate_java_constants',
       'inputs': [
-        '<(DEPTH)/build/android/gyp/util/build_utils.py',
+        '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
         '<(generator_path)',
         '<(source_file)',
       ],

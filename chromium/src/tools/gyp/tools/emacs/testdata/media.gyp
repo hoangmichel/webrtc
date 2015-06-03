@@ -840,7 +840,7 @@
             '../ui/ui.gyp:ui',
           ],
           'include_dirs': [
-            '<(DEPTH)/third_party/wtl/include',
+            '<(peeracle_webrtc_root)/third_party/wtl/include',
           ],
           'sources': [
             'tools/player_wtl/list.h',
@@ -988,7 +988,7 @@
               ],
               'action': [
                 'python',
-                '<(DEPTH)/base/android/jni_generator/jni_generator.py',
+                '<(peeracle_webrtc_root)/base/android/jni_generator/jni_generator.py',
                 '-o',
                 '<@(_inputs)',
                 '<@(_outputs)',

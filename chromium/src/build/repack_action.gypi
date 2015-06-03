@@ -11,7 +11,7 @@
 {
   # GYP version: //tools/grit/repack.gni
   'variables': {
-    'repack_path': '<(DEPTH)/tools/grit/grit/format/repack.py',
+    'repack_path': '<(peeracle_webrtc_root)/tools/grit/grit/format/repack.py',
     'repack_options%': [],
   },
   'inputs': [

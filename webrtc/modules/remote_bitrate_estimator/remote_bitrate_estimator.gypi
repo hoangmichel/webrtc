@@ -59,7 +59,7 @@
           'target_name': 'bwe_simulator',
           'type': 'static_library',
           'dependencies': [
-            '<(DEPTH)/testing/gtest.gyp:gtest',
+            '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
           ],
           'sources': [
             'test/bwe.cc',

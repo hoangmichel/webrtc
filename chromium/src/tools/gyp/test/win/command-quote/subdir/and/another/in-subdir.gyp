@@ -11,7 +11,7 @@
         # Taken from native_client/build/common.gypi. Seems unintentional (a
         # string in a 1 element list)? But since it works on other generators,
         # I guess it should work here too.
-        'filepath': [ 'call <(DEPTH)/../../../go.bat' ],
+        'filepath': [ 'call <(peeracle_webrtc_root)/../../../go.bat' ],
       },
       'rules': [
       {
@@ -21,7 +21,7 @@
         'outputs': ['output4.obj'],
         'action': ['<@(filepath)', '<(RULE_INPUT_PATH)', 'output4.obj'],
       },],
-      'sources': ['<(DEPTH)\\..\\..\\..\\a.S'],
+      'sources': ['<(peeracle_webrtc_root)\\..\\..\\..\\a.S'],
     },
   ]
 }
