@@ -605,7 +605,7 @@
       # If no directory is specified then a temporary directory will be used.
       'test_isolation_outdir%': '',
 
-      'wix_path%': '<(DEPTH)/third_party/wix',
+      'wix_path%': '<(peeracle_webrtc_root)/third_party/wix',
 
       # Supervised users are enabled by default.
       'enable_supervised_users%': 1,
@@ -937,23 +937,23 @@
           'use_allocator%': 'none',
           # sysroot needs to be an absolute path otherwise it generates
           # incorrect results when passed to pkg-config
-          'sysroot%': '<!(cd <(DEPTH) && pwd -P)/chrome/installer/linux/debian_wheezy_arm-sysroot',
+          'sysroot%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/chrome/installer/linux/debian_wheezy_arm-sysroot',
         }], # OS=="linux" and target_arch=="arm" and chromeos==0
 
         ['OS=="linux" and ((branding=="Chrome" and buildtype=="Official" and chromeos==0) or use_sysroot==1)' , {
           'conditions': [
             ['target_arch=="x64"', {
-              'sysroot%': '<!(cd <(DEPTH) && pwd -P)/chrome/installer/linux/debian_wheezy_amd64-sysroot',
+              'sysroot%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/chrome/installer/linux/debian_wheezy_amd64-sysroot',
             }],
             ['target_arch=="ia32"', {
-              'sysroot%': '<!(cd <(DEPTH) && pwd -P)/chrome/installer/linux/debian_wheezy_i386-sysroot',
+              'sysroot%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/chrome/installer/linux/debian_wheezy_i386-sysroot',
             }],
         ],
         }], # OS=="linux" and branding=="Chrome" and buildtype=="Official" and chromeos==0
 
         ['OS=="linux" and target_arch=="mipsel"', {
-          'sysroot%': '<!(cd <(DEPTH) && pwd -P)/mipsel-sysroot/sysroot',
-          'CXX%': '<!(cd <(DEPTH) && pwd -P)/mipsel-sysroot/bin/mipsel-linux-gnu-gcc',
+          'sysroot%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/mipsel-sysroot/sysroot',
+          'CXX%': '<!(cd <(peeracle_webrtc_root) && pwd -P)/mipsel-sysroot/bin/mipsel-linux-gnu-gcc',
         }],
 
         # Whether tests targets should be run, archived or just have the
@@ -1006,9 +1006,9 @@
         # Path to sas.dll, which provides the SendSAS function.
         # http://msdn.microsoft.com/en-us/library/windows/desktop/dd979761(v=vs.85).aspx
         ['target_arch=="x64"', {
-          'sas_dll_path%': '<(DEPTH)/third_party/platformsdk_win7/files/redist/amd64',
+          'sas_dll_path%': '<(peeracle_webrtc_root)/third_party/platformsdk_win7/files/redist/amd64',
         }, {
-          'sas_dll_path%': '<(DEPTH)/third_party/platformsdk_win7/files/redist/x86',
+          'sas_dll_path%': '<(peeracle_webrtc_root)/third_party/platformsdk_win7/files/redist/x86',
         }],
       ],
 
@@ -3202,7 +3202,7 @@
       'Common_Base': {
         'abstract': 1,
         'msvs_configuration_attributes': {
-          'OutputDirectory': '<(DEPTH)\\build\\<(build_dir_prefix)$(ConfigurationName)',
+          'OutputDirectory': '<(peeracle_root)\\build\\<(build_dir_prefix)$(ConfigurationName)',
           'IntermediateDirectory': '$(OutDir)\\obj\\$(ProjectName)',
           'CharacterSet': '1',
         },
@@ -6193,6 +6193,6 @@
     # files to appear (when present) in the UI as actual files and not red
     # red "missing file" proxies, the correct path to PROJECT_DERIVED_FILE_DIR,
     # and therefore SYMROOT, needs to be set at the project level.
-    'SYMROOT': '<(peeracle_root)/xcodebuild',
+    'SYMROOT': '<(peeracle_webrtc_root)/xcodebuild',
   },
 }
