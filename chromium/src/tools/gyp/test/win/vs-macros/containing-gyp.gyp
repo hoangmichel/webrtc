@@ -25,7 +25,7 @@
               'as.py',
               '-a', '$(PlatformName)',
               '-o', '$(IntDir)/$(InputName).obj',
-              '-p', '<(peeracle_webrtc_root)',
+              '-p', '<(DEPTH)',
               '$(InputPath)'],
           'message': 'Building assembly language file $(InputPath)',
           'process_outputs_as_sources': 1,

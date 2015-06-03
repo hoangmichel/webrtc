@@ -6,7 +6,7 @@
 # file the rule applies to).
 {
   'target_defaults': {
-    'msvs_cygwin_dirs': ['../../../../../../<(peeracle_webrtc_root)/third_party/cygwin'],
+    'msvs_cygwin_dirs': ['../../../../../../<(DEPTH)/third_party/cygwin'],
   },
   'targets': [
     {
@@ -49,7 +49,7 @@
               'action_name': 'setup_mount',
               'msvs_cygwin_shell': 0,
               'inputs': [
-                '../../../../../../<(peeracle_webrtc_root)/third_party/cygwin/setup_mount.bat',
+                '../../../../../../<(DEPTH)/third_party/cygwin/setup_mount.bat',
               ],
               # Visual Studio requires an output file, or else the
               # custom build step won't run.

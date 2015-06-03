@@ -67,7 +67,7 @@
           'rule_name': 'gencc',
           'extension': 'gencc',
           'inputs': [
-            '<(peeracle_webrtc_root)/copy-file.py',
+            '<(DEPTH)/copy-file.py',
           ],
           'outputs': [
             '<(INTERMEDIATE_DIR)/<(RULE_INPUT_DIRNAME)/<(RULE_INPUT_ROOT).cc',
@@ -87,7 +87,7 @@
           'target_name': 'gencc_int_output_external',
           'type': 'executable',
           'msvs_cygwin_shell': 0,
-          'msvs_cygwin_dirs': ['../../../../../../<(peeracle_webrtc_root)/third_party/cygwin'],
+          'msvs_cygwin_dirs': ['../../../../../../<(DEPTH)/third_party/cygwin'],
           'sources': [
             'nodir.gencc',
             'foo/bar/baz.gencc',
@@ -103,7 +103,7 @@
               'extension': 'gencc',
               'msvs_external_rule': 1,
               'inputs': [
-                '<(peeracle_webrtc_root)/copy-file.py',
+                '<(DEPTH)/copy-file.py',
               ],
               'outputs': [
                 '<(INTERMEDIATE_DIR)/<(RULE_INPUT_DIRNAME)/<(RULE_INPUT_ROOT).cc',
@@ -123,7 +123,7 @@
               'action_name': 'setup_mount',
               'msvs_cygwin_shell': 0,
               'inputs': [
-                '../../../../../../<(peeracle_webrtc_root)/third_party/cygwin/setup_mount.bat',
+                '../../../../../../<(DEPTH)/third_party/cygwin/setup_mount.bat',
               ],
               # Visual Studio requires an output file, or else the
               # custom build step won't run.
