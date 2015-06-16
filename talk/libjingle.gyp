@@ -385,18 +385,18 @@
       'conditions': [
         ['build_json==1', {
           'dependencies': [
-            '<(DEPTH)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
+            '<(peeracle_webrtc_root)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
           ],
           'export_dependent_settings': [
-            '<(DEPTH)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
+            '<(peeracle_webrtc_root)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
           ],
         }],
         ['build_expat==1', {
           'dependencies': [
-            '<(DEPTH)/third_party/expat/expat.gyp:expat',
+            '<(peeracle_webrtc_root)/third_party/expat/expat.gyp:expat',
           ],
           'export_dependent_settings': [
-            '<(DEPTH)/third_party/expat/expat.gyp:expat',
+            '<(peeracle_webrtc_root)/third_party/expat/expat.gyp:expat',
           ],
         }],
       ],
