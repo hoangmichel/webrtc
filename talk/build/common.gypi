@@ -47,7 +47,7 @@
     'libyuv_dir%': '<(peeracle_webrtc_root)/third_party/libyuv',
 
     # Disable this to skip building source requiring GTK.
-    'use_gtk%': 1,
+    'use_gtk%': 0,
   },
   'target_defaults': {
     'include_dirs': [
