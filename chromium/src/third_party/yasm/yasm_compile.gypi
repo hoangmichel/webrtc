@@ -93,7 +93,7 @@
     # .asm files for ARM will fail.
     ['use_system_yasm==0 and ( target_arch=="ia32" or target_arch=="x64" )', {
       'dependencies': [
-        '<(peeracle_webrtc_root)/third_party/yasm/yasm.gyp:yasm#host',
+        '<(webrtc_depot_dir)/third_party/yasm/yasm.gyp:yasm#host',
       ],
     }],
   ],  # conditions

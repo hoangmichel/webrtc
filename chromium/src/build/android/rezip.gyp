@@ -22,8 +22,8 @@
             'java_sources': ['>!@(find >(java_in_dir) -name "*.java")'],
           },
           'inputs': [
-            '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
-            '<(peeracle_webrtc_root)/build/android/gyp/javac.py',
+            '<(webrtc_depot_dir)/build/android/gyp/util/build_utils.py',
+            '<(webrtc_depot_dir)/build/android/gyp/javac.py',
             '>@(java_sources)',
           ],
           'outputs': [
@@ -31,7 +31,7 @@
             '<(javac_jar_path)',
           ],
           'action': [
-            'python', '<(peeracle_webrtc_root)/build/android/gyp/javac.py',
+            'python', '<(webrtc_depot_dir)/build/android/gyp/javac.py',
             '--classpath=',
             '--classes-dir=<(SHARED_INTERMEDIATE_DIR)/<(_target_name)',
             '--jar-path=<(javac_jar_path)',

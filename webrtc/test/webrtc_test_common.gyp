@@ -54,8 +54,8 @@
         }],
       ],
       'dependencies': [
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
         '<(webrtc_root)/base/base.gyp:rtc_base',
         '<(webrtc_root)/common.gyp:webrtc_common',
         '<(webrtc_root)/modules/modules.gyp:media_file',
@@ -110,7 +110,7 @@
         }],
       ],
       'dependencies': [
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
         '<(webrtc_root)/modules/modules.gyp:media_file',
         '<(webrtc_root)/test/test.gyp:frame_generator',
         '<(webrtc_root)/test/test.gyp:test_support',
@@ -150,8 +150,8 @@
           'type': '<(gtest_target_type)',
           'dependencies': [
             'webrtc_test_common',
-            '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-            '<(peeracle_webrtc_root)/testing/gmock.gyp:gmock',
+            '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+            '<(webrtc_depot_dir)/testing/gmock.gyp:gmock',
             '<(webrtc_root)/modules/modules.gyp:video_capture',
             '<(webrtc_root)/test/test.gyp:test_support_main',
           ],

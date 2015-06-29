@@ -191,7 +191,7 @@
           'conditions': [
             ['use_openssl==1', {
               'dependencies': [
-                '<(peeracle_webrtc_root)/third_party/boringssl/boringssl.gyp:boringssl',
+                '<(webrtc_depot_dir)/third_party/boringssl/boringssl.gyp:boringssl',
               ],
               'sources!': [
                 'srtp/crypto/cipher/aes_cbc.c',
@@ -297,7 +297,7 @@
           'conditions': [
             ['use_openssl==1', {
               'dependencies': [
-                '<(peeracle_webrtc_root)/third_party/boringssl/boringssl.gyp:boringssl',
+                '<(webrtc_depot_dir)/third_party/boringssl/boringssl.gyp:boringssl',
               ],
             }],
           ],

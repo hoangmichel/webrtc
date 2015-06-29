@@ -42,10 +42,10 @@
     'java_out_dir': '<(PRODUCT_DIR)/java_proto/<(_target_name)/src',
     'proto_in_dir%': '.',
     'stamp_file': '<(java_out_dir).stamp',
-    'script': '<(peeracle_webrtc_root)/build/protoc_java.py',
+    'script': '<(webrtc_depot_dir)/build/protoc_java.py',
 
     # The rest of the variables here are for the java.gypi include.
-    'java_in_dir': '<(peeracle_webrtc_root)/build/android/empty',
+    'java_in_dir': '<(webrtc_depot_dir)/build/android/empty',
     'generated_src_dirs': ['<(java_out_dir)'],
     # Adding the |stamp_file| to |additional_input_paths| makes the actions in
     # the include of java.gypi depend on the genproto_java action.
@@ -76,8 +76,8 @@
     },
   ],
   'dependencies': [
-    '<(peeracle_webrtc_root)/third_party/android_protobuf/android_protobuf.gyp:android_protoc#host',
-    '<(peeracle_webrtc_root)/third_party/android_protobuf/android_protobuf.gyp:protobuf_nano_javalib',
+    '<(webrtc_depot_dir)/third_party/android_protobuf/android_protobuf.gyp:android_protoc#host',
+    '<(webrtc_depot_dir)/third_party/android_protobuf/android_protobuf.gyp:protobuf_nano_javalib',
   ],
   'includes': [ 'java.gypi' ],
 }

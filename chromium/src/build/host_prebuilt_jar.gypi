@@ -43,7 +43,7 @@
         '<(dest_path)',
       ],
       'action': [
-        'python', '<(peeracle_webrtc_root)/build/cp.py', '<(src_path)', '<(dest_path)',
+        'python', '<(webrtc_depot_dir)/build/cp.py', '<(src_path)', '<(dest_path)',
       ],
     }
   ]

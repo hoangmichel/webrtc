@@ -29,9 +29,9 @@
       },
       'conditions': [
         ['build_libyuv==1', {
-          'dependencies': ['<(peeracle_webrtc_root)/third_party/libyuv/libyuv.gyp:libyuv',],
+          'dependencies': ['<(webrtc_depot_dir)/third_party/libyuv/libyuv.gyp:libyuv',],
           'export_dependent_settings': [
-            '<(peeracle_webrtc_root)/third_party/libyuv/libyuv.gyp:libyuv',
+            '<(webrtc_depot_dir)/third_party/libyuv/libyuv.gyp:libyuv',
           ],
         }, {
           # Need to add a directory normally exported by libyuv.gyp.

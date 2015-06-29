@@ -36,7 +36,7 @@
           'dependencies': [
             '../libjingle.gyp:libjingle_peerconnection_objc',
           ],
-          'sources': ['<(peeracle_webrtc_root)/webrtc/build/no_op.cc',],
+          'sources': ['<(webrtc_depot_dir)/webrtc/build/no_op.cc',],
         },
       ],
     }]

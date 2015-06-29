@@ -16,7 +16,7 @@
         'build_pnacl_newlib': 1,
       },
       'dependencies': [
-        '<(peeracle_webrtc_root)/native_client_sdk/native_client_sdk_untrusted.gyp:nacl_io_untrusted',
+        '<(webrtc_depot_dir)/native_client_sdk/native_client_sdk_untrusted.gyp:nacl_io_untrusted',
       ],
       'includes': [
         # Include the auto-generated gypi file.

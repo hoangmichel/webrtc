@@ -7,7 +7,7 @@
 {
   'variables': {
     # TODO: remove this helper when we have loops in GYP
-    'apply_locales_cmd': ['python', '<(peeracle_webrtc_root)/build/apply_locales.py'],
+    'apply_locales_cmd': ['python', '<(webrtc_depot_dir)/build/apply_locales.py'],
 
     'conditions': [
       ['OS=="mac"', {

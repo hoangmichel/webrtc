@@ -29,7 +29,7 @@
           'conditions': [
             ['build_icu==1', {
               'dependencies': [
-                '<(peeracle_webrtc_root)/third_party/icu/icu.gyp:icuuc',
+                '<(webrtc_depot_dir)/third_party/icu/icu.gyp:icuuc',
               ],
             }],
           ],

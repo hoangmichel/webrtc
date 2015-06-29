@@ -5,9 +5,9 @@
 {
   'variables': {
     'variables': {
-      'version_py_path': '<(peeracle_webrtc_root)/build/util/version.py',
-      'version_path': '<(peeracle_webrtc_root)/chrome/VERSION',
-      'lastchange_path': '<(peeracle_webrtc_root)/build/util/LASTCHANGE',
+      'version_py_path': '<(webrtc_depot_dir)/build/util/version.py',
+      'version_path': '<(webrtc_depot_dir)/chrome/VERSION',
+      'lastchange_path': '<(webrtc_depot_dir)/build/util/LASTCHANGE',
     },
     'version_py_path': '<(version_py_path)',
     'version_path': '<(version_path)',

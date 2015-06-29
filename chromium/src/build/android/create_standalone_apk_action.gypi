@@ -24,8 +24,8 @@
     'inputs': [],
   },
   'inputs': [
-    '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
-    '<(peeracle_webrtc_root)/build/android/gyp/create_standalone_apk.py',
+    '<(webrtc_depot_dir)/build/android/gyp/util/build_utils.py',
+    '<(webrtc_depot_dir)/build/android/gyp/create_standalone_apk.py',
     '<(input_apk_path)',
     '>@(inputs)',
   ],
@@ -33,7 +33,7 @@
     '<(output_apk_path)',
   ],
   'action': [
-    'python', '<(peeracle_webrtc_root)/build/android/gyp/create_standalone_apk.py',
+    'python', '<(webrtc_depot_dir)/build/android/gyp/create_standalone_apk.py',
     '--libraries-top-dir=<(libraries_top_dir)',
     '--input-apk-path=<(input_apk_path)',
     '--output-apk-path=<(output_apk_path)',

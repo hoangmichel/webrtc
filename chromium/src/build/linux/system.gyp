@@ -1189,7 +1189,7 @@
                 'include_dirs+': [
                   # We need for our local copies of the libssl3 headers to come
                   # before other includes, as we are shadowing system headers.
-                  '<(peeracle_webrtc_root)/net/third_party/nss/ssl',
+                  '<(webrtc_depot_dir)/net/third_party/nss/ssl',
                 ],
               },
             }],

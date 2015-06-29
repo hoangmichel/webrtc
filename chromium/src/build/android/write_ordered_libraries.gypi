@@ -26,15 +26,15 @@
     'subtarget%': '',
   },
   'inputs': [
-    '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
-    '<(peeracle_webrtc_root)/build/android/gyp/write_ordered_libraries.py',
+    '<(webrtc_depot_dir)/build/android/gyp/util/build_utils.py',
+    '<(webrtc_depot_dir)/build/android/gyp/write_ordered_libraries.py',
     '<@(input_libraries)',
   ],
   'outputs': [
     '<(ordered_libraries_file)',
   ],
   'action': [
-    'python', '<(peeracle_webrtc_root)/build/android/gyp/write_ordered_libraries.py',
+    'python', '<(webrtc_depot_dir)/build/android/gyp/write_ordered_libraries.py',
     '--input-libraries=<(input_libraries)',
     '--libraries-dir=<(SHARED_LIB_DIR),<(PRODUCT_DIR)',
     '--readelf=<(android_readelf)',

@@ -18,10 +18,10 @@
       'conditions': [
         ['build_expat==1', {
           'dependencies': [
-            '<(peeracle_webrtc_root)/third_party/expat/expat.gyp:expat',
+            '<(webrtc_depot_dir)/third_party/expat/expat.gyp:expat',
           ],
           'export_dependent_settings': [
-            '<(peeracle_webrtc_root)/third_party/expat/expat.gyp:expat',
+            '<(webrtc_depot_dir)/third_party/expat/expat.gyp:expat',
           ],
         }],
       ],

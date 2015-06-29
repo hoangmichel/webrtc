@@ -34,8 +34,8 @@
     ],
   },
   'inputs': [
-    '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
-    '<(peeracle_webrtc_root)/build/android/gyp/pack_arm_relocations.py',
+    '<(webrtc_depot_dir)/build/android/gyp/util/build_utils.py',
+    '<(webrtc_depot_dir)/build/android/gyp/pack_arm_relocations.py',
     '<(ordered_libraries_file)',
     '>@(input_paths)',
   ],
@@ -46,13 +46,13 @@
     ['enable_packing == 1', {
       'message': 'Packing ARM relative relocations for <(_target_name)',
       'dependencies': [
-        '<(peeracle_webrtc_root)/tools/relocation_packer/relocation_packer.gyp:relocation_packer#host',
+        '<(webrtc_depot_dir)/tools/relocation_packer/relocation_packer.gyp:relocation_packer#host',
       ],
       'inputs': [
         '<(PRODUCT_DIR)/relocation_packer',
       ],
       'action': [
-        'python', '<(peeracle_webrtc_root)/build/android/gyp/pack_arm_relocations.py',
+        'python', '<(webrtc_depot_dir)/build/android/gyp/pack_arm_relocations.py',
         '--configuration-name=<(CONFIGURATION_NAME)',
         '--enable-packing=1',
         '--has-relocations-with-addends=<(has_relocations_with_addends)',
@@ -67,7 +67,7 @@
     }, {
       'message': 'Copying libraries (no relocation packing) for <(_target_name)',
       'action': [
-        'python', '<(peeracle_webrtc_root)/build/android/gyp/pack_arm_relocations.py',
+        'python', '<(webrtc_depot_dir)/build/android/gyp/pack_arm_relocations.py',
         '--configuration-name=<(CONFIGURATION_NAME)',
         '--enable-packing=0',
         '--stripped-libraries-dir=<(stripped_libraries_dir)',

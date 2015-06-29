@@ -31,7 +31,7 @@
   'conditions': [
       ['component == "shared_library"', {
         'dependencies': [
-          '<(peeracle_webrtc_root)/build/android/setup.gyp:copy_system_libraries',
+          '<(webrtc_depot_dir)/build/android/setup.gyp:copy_system_libraries',
         ],
         'variables': {
           'intermediate_dir': '<(PRODUCT_DIR)/<(_target_name)',

@@ -23,13 +23,13 @@
         'rtc_xmllite_unittest',
         'rtc_xmpp_unittest',
         'sound/sound.gyp:rtc_sound',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/testing/gmock.gyp:gmock',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gmock.gyp:gmock',
       ],
       'conditions': [
         ['OS=="android"', {
           'dependencies': [
-            '<(peeracle_webrtc_root)/testing/android/native_test.gyp:native_test_native_code',
+            '<(webrtc_depot_dir)/testing/android/native_test.gyp:native_test_native_code',
           ],
         }],
       ],
@@ -52,7 +52,7 @@
         'video/loopback.h',
       ],
       'dependencies': [
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
         '<(webrtc_root)/modules/modules.gyp:video_capture_module_internal_impl',
         '<(webrtc_root)/modules/modules.gyp:video_render',
         '<(webrtc_root)/system_wrappers/system_wrappers.gyp:system_wrappers',
@@ -77,8 +77,8 @@
       ],
       'dependencies': [
         'loopback_base',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
         'test/webrtc_test_common.gyp:webrtc_test_common',
         'test/webrtc_test_common.gyp:webrtc_test_renderer',
         'test/test.gyp:test_main',
@@ -103,8 +103,8 @@
       ],
       'dependencies': [
         'loopback_base',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
         'test/webrtc_test_common.gyp:webrtc_test_common',
         'test/webrtc_test_common.gyp:webrtc_test_renderer',
         'test/test.gyp:test_main',
@@ -128,8 +128,8 @@
         }],
       ],
       'dependencies': [
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
         'test/webrtc_test_common.gyp:webrtc_test_common',
         'test/webrtc_test_common.gyp:webrtc_test_renderer',
         '<(webrtc_root)/modules/modules.gyp:video_capture',
@@ -155,8 +155,8 @@
         'video/video_send_stream_tests.cc',
       ],
       'dependencies': [
-        '<(peeracle_webrtc_root)/testing/gmock.gyp:gmock',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gmock.gyp:gmock',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
         '<(webrtc_root)/common.gyp:webrtc_common',
         '<(webrtc_root)/modules/modules.gyp:rtp_rtcp',
         '<(webrtc_root)/modules/modules.gyp:video_capture',
@@ -172,7 +172,7 @@
       'conditions': [
         ['OS=="android"', {
           'dependencies': [
-            '<(peeracle_webrtc_root)/testing/android/native_test.gyp:native_test_native_code',
+            '<(webrtc_depot_dir)/testing/android/native_test.gyp:native_test_native_code',
           ],
         }],
       ],
@@ -191,8 +191,8 @@
         'video/rampup_tests.h',
       ],
       'dependencies': [
-        '<(peeracle_webrtc_root)/testing/gmock.gyp:gmock',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gmock.gyp:gmock',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
         '<(webrtc_root)/modules/modules.gyp:video_capture',
         '<(webrtc_root)/test/test.gyp:channel_transport',
         '<(webrtc_root)/voice_engine/voice_engine.gyp:voice_engine',
@@ -207,7 +207,7 @@
       'conditions': [
         ['OS=="android"', {
           'dependencies': [
-            '<(peeracle_webrtc_root)/testing/android/native_test.gyp:native_test_native_code',
+            '<(webrtc_depot_dir)/testing/android/native_test.gyp:native_test_native_code',
           ],
         }],
       ],

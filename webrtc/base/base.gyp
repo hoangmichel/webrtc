@@ -472,7 +472,7 @@
           'conditions': [
             ['build_json==1', {
               'dependencies': [
-                '<(peeracle_webrtc_root)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
+                '<(webrtc_depot_dir)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
               ],
             }, {
               'include_dirs': [
@@ -517,7 +517,7 @@
           'conditions': [
             ['build_ssl==1', {
               'dependencies': [
-                '<(peeracle_webrtc_root)/third_party/boringssl/boringssl.gyp:boringssl',
+                '<(webrtc_depot_dir)/third_party/boringssl/boringssl.gyp:boringssl',
               ],
             }, {
               'include_dirs': [
@@ -553,14 +553,14 @@
                 # it's pulled from the system.
                 ['OS == "mac" or OS == "ios"', {
                   'dependencies': [
-                    '<(peeracle_webrtc_root)/net/third_party/nss/ssl.gyp:libssl',
-                    '<(peeracle_webrtc_root)/third_party/nss/nss.gyp:nspr',
-                    '<(peeracle_webrtc_root)/third_party/nss/nss.gyp:nss',
+                    '<(webrtc_depot_dir)/net/third_party/nss/ssl.gyp:libssl',
+                    '<(webrtc_depot_dir)/third_party/nss/nss.gyp:nspr',
+                    '<(webrtc_depot_dir)/third_party/nss/nss.gyp:nss',
                   ],
                 }],
                 ['os_posix == 1 and OS != "mac" and OS != "ios" and OS != "android"', {
                   'dependencies': [
-                    '<(peeracle_webrtc_root)/build/linux/system.gyp:ssl',
+                    '<(webrtc_depot_dir)/build/linux/system.gyp:ssl',
                   ],
                 }],
               ],

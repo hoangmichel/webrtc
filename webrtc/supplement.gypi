@@ -1,7 +1,7 @@
 {
   'variables': {
     'variables': {
-      'webrtc_root%': '<(peeracle_webrtc_root)/webrtc',
+      'webrtc_root%': '<(webrtc_depot_dir)/webrtc',
     },
     'webrtc_root%': '<(webrtc_root)',
     'build_with_chromium': 0,

@@ -9,6 +9,6 @@
 # http://crbug.com/440793
 {
   'dependencies': [
-    '<(peeracle_webrtc_root)/build/android/ndk.gyp:cpu_features',
+    '<(webrtc_depot_dir)/build/android/ndk.gyp:cpu_features',
   ],
 }

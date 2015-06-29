@@ -46,14 +46,14 @@
     {
       'action_name': 'create_resources_zip',
       'inputs': [
-          '<(peeracle_webrtc_root)/build/android/gyp/zip.py',
+          '<(webrtc_depot_dir)/build/android/gyp/zip.py',
           '<@(grit_outputs)',
       ],
       'outputs': [
           '<(resource_zip_path)',
       ],
       'action': [
-          'python', '<(peeracle_webrtc_root)/build/android/gyp/zip.py',
+          'python', '<(webrtc_depot_dir)/build/android/gyp/zip.py',
           '--input-dir', '<(res_grit_dir)',
           '--output', '<(resource_zip_path)',
       ],

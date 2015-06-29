@@ -33,7 +33,7 @@
           'variables': {
             'ninja_output_dir': 'ninja-protoc',
             'ninja_product_dir':
-              '<(peeracle_webrtc_root)/xcodebuild/<(ninja_output_dir)/<(CONFIGURATION_NAME)',
+              '<(webrtc_depot_dir)/xcodebuild/<(ninja_output_dir)/<(CONFIGURATION_NAME)',
             # Gyp to rerun
             're_run_targets': [
               'third_party/protobuf/protobuf.gyp',

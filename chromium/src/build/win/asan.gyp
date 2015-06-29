@@ -19,7 +19,7 @@
                'destination': '<(PRODUCT_DIR)',
                'files': [
                  # Path is relative to this GYP file.
-                 '<(peeracle_webrtc_root)/<(make_clang_dir)/lib/clang/3.7.0/lib/windows/clang_rt.asan_dynamic-i386.dll',
+                 '<(webrtc_depot_dir)/<(make_clang_dir)/lib/clang/3.7.0/lib/windows/clang_rt.asan_dynamic-i386.dll',
                ],
              },
            ],

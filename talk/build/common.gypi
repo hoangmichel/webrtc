@@ -29,7 +29,7 @@
 
 {
   'variables': {
-    'webrtc_root%': '<(peeracle_webrtc_root)/webrtc',
+    'webrtc_root%': '<(webrtc_depot_dir)/webrtc',
     'libjingle_tests_additional_deps%': [],
     # TODO(ronghuawu): For now, disable the Chrome plugins, which causes a
     # flood of chromium-style warnings.
@@ -44,14 +44,14 @@
     'build_libyuv%': 1,
     'build_usrsctp%': 1,
     # Make it possible to provide custom locations for some libraries.
-    'libyuv_dir%': '<(peeracle_webrtc_root)/third_party/libyuv',
+    'libyuv_dir%': '<(webrtc_depot_dir)/third_party/libyuv',
 
     # Disable this to skip building source requiring GTK.
     'use_gtk%': 0,
   },
   'target_defaults': {
     'include_dirs': [
-      '<(peeracle_webrtc_root)',
+      '<(webrtc_depot_dir)',
       '../..',
       '../../third_party',
       '../../third_party/webrtc',

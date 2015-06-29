@@ -13,7 +13,7 @@
       'type': 'executable',
       'dependencies': [
         '<(webrtc_root)/test/test.gyp:test_support_main',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
         'neteq',
         'neteq_unittest_tools',
         'PCM16B',
@@ -73,7 +73,7 @@
       'target_name': 'RTPjitter',
       'type': 'executable',
       'dependencies': [
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
       ],
       'sources': [
         'test/RTPjitter.cc',
@@ -85,8 +85,8 @@
       'type': 'executable',
       'dependencies': [
         'neteq_unittest_tools',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
         '<(webrtc_root)/system_wrappers/system_wrappers.gyp:system_wrappers_default',
       ],
       'sources': [
@@ -99,7 +99,7 @@
       'type': 'executable',
       'dependencies': [
         'neteq_test_tools',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
       ],
       'sources': [
        'test/RTPchange.cc',
@@ -111,7 +111,7 @@
       'type': 'executable',
       'dependencies': [
        'neteq_test_tools',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
       ],
       'sources': [
         'test/RTPtimeshift.cc',
@@ -122,7 +122,7 @@
       'target_name': 'rtpcat',
       'type': 'executable',
       'dependencies': [
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
         '<(webrtc_root)/test/test.gyp:rtp_test_utils',
       ],
       'sources': [
@@ -161,8 +161,8 @@
         'neteq',
         'PCM16B',
         'neteq_unittest_tools',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
       ],
       'sources': [
         'tools/neteq_external_decoder_test.cc',
@@ -180,7 +180,7 @@
       'dependencies': [
         'neteq',
         'neteq_test_support',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
         '<(webrtc_root)/test/test.gyp:test_support_main',
       ],
       'sources': [
@@ -195,8 +195,8 @@
         'neteq',
         'neteq_test_support',
         'webrtc_opus',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
         '<(webrtc_root)/test/test.gyp:test_support_main',
       ],
       'sources': [
@@ -211,8 +211,8 @@
         'neteq',
         'neteq_test_support',
         'iSACFix',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
         '<(webrtc_root)/test/test.gyp:test_support_main',
       ],
       'sources': [
@@ -227,8 +227,8 @@
         'neteq',
         'neteq_test_support',
         'G711',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
         '<(webrtc_root)/test/test.gyp:test_support_main',
       ],
       'sources': [
@@ -243,8 +243,8 @@
         'neteq',
         'neteq_test_support',
         'iLBC',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
         '<(webrtc_root)/test/test.gyp:test_support_main',
       ],
       'sources': [
@@ -268,7 +268,7 @@
         'iSAC',
         'CNG',
         '<(webrtc_root)/common.gyp:webrtc_common',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
       ],
       'direct_dependent_settings': {
         'include_dirs': [

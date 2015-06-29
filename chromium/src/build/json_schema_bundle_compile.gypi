@@ -22,7 +22,7 @@
     # Functions and namespaces can be excluded by setting "nocompile" to true.
     # The default root path of API implementation sources is
     # chrome/browser/extensions/api and can be overridden by setting "impl_dir".
-    'api_gen_dir': '<(peeracle_webrtc_root)/tools/json_schema_compiler',
+    'api_gen_dir': '<(webrtc_depot_dir)/tools/json_schema_compiler',
     'api_gen': '<(api_gen_dir)/compiler.py',
     'generator_files': [
       '<(api_gen_dir)/cc_generator.py',
@@ -54,7 +54,7 @@
       'action': [
         'python',
         '<(api_gen)',
-        '--root=<(peeracle_webrtc_root)',
+        '--root=<(webrtc_depot_dir)',
         '--destdir=<(SHARED_INTERMEDIATE_DIR)',
         '--namespace=<(root_namespace)',
         '--generator=cpp-bundle-schema',
@@ -70,7 +70,7 @@
   ],
   'include_dirs': [
     '<(SHARED_INTERMEDIATE_DIR)',
-    '<(peeracle_webrtc_root)',
+    '<(webrtc_depot_dir)',
   ],
   'direct_dependent_settings': {
     'include_dirs': [

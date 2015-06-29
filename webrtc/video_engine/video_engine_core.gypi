@@ -80,8 +80,8 @@
             'video_engine_core',
             '<(webrtc_root)/modules/modules.gyp:video_capture_module_internal_impl',
             '<(webrtc_root)/modules/modules.gyp:video_render_module_internal_impl',
-            '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-            '<(peeracle_webrtc_root)/testing/gmock.gyp:gmock',
+            '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+            '<(webrtc_depot_dir)/testing/gmock.gyp:gmock',
             '<(webrtc_root)/test/test.gyp:test_support_main',
           ],
           'sources': [
@@ -98,7 +98,7 @@
           'conditions': [
             ['OS=="android"', {
               'dependencies': [
-                '<(peeracle_webrtc_root)/testing/android/native_test.gyp:native_test_native_code',
+                '<(webrtc_depot_dir)/testing/android/native_test.gyp:native_test_native_code',
               ],
             }],
           ],

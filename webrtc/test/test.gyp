@@ -16,7 +16,7 @@
       'target_name': 'channel_transport',
       'type': 'static_library',
       'dependencies': [
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
         '<(webrtc_root)/common.gyp:webrtc_common',
         '<(webrtc_root)/system_wrappers/system_wrappers.gyp:system_wrappers',
       ],
@@ -65,8 +65,8 @@
         'rtp_file_writer.h',
       ],
       'dependencies': [
-        '<(peeracle_webrtc_root)/webrtc/common.gyp:webrtc_common',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/webrtc/common.gyp:webrtc_common',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
         '<(webrtc_root)/modules/modules.gyp:rtp_rtcp',
       ],
     },
@@ -103,16 +103,16 @@
       'dependencies': [
         'field_trial',
         'histogram',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
       ],
     },
     {
       'target_name': 'test_support',
       'type': 'static_library',
       'dependencies': [
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/testing/gmock.gyp:gmock',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gmock.gyp:gmock',
         '<(webrtc_root)/common.gyp:gtest_prod',
         '<(webrtc_root)/system_wrappers/system_wrappers.gyp:system_wrappers',
       ],
@@ -151,9 +151,9 @@
         'field_trial',
         'histogram',
         'test_support',
-        '<(peeracle_webrtc_root)/testing/gmock.gyp:gmock',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-        '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+        '<(webrtc_depot_dir)/testing/gmock.gyp:gmock',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
       ],
       'sources': [
         'run_all_unittests.cc',
@@ -184,8 +184,8 @@
       'dependencies': [
         'channel_transport',
         'test_support_main',
-        '<(peeracle_webrtc_root)/testing/gmock.gyp:gmock',
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gmock.gyp:gmock',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
       ],
       'sources': [
         'channel_transport/udp_transport_unittest.cc',
@@ -206,7 +206,7 @@
       'conditions': [
         ['OS=="android"', {
           'dependencies': [
-            '<(peeracle_webrtc_root)/testing/android/native_test.gyp:native_test_native_code',
+            '<(webrtc_depot_dir)/testing/android/native_test.gyp:native_test_native_code',
           ],
         }],
       ],

@@ -16,7 +16,7 @@
 #     # The full path to the location in which the ninja executable should be
 #     # placed. This cannot be shared with another mac build.
 #    'ninja_product_dir':
-#      '<(peeracle_webrtc_root)/xcodebuild/<(ninja_output_dir)/<(CONFIGURATION_NAME)',
+#      '<(webrtc_depot_dir)/xcodebuild/<(ninja_output_dir)/<(CONFIGURATION_NAME)',
 #     # The list of all the gyp files that contain the targets to run.
 #     're_run_targets': [
 #       'foo.gyp',
@@ -47,7 +47,7 @@
     'ninja_cmd': [
       # Bounce through clean_env to clean up the environment so things
       # set by the iOS build don't pollute the Mac build.
-      '<(peeracle_webrtc_root)/build/ios/clean_env.py',
+      '<(webrtc_depot_dir)/build/ios/clean_env.py',
       # ninja must be found in the PATH.
       'ADD_TO_PATH=<!(echo $PATH)',
       'ninja',
@@ -75,7 +75,7 @@
     # Rerun gyp for each of the projects needed. This is what actually
     # generates the projects on disk.
     're_run_gyp_execution':
-      '<!(cd <(peeracle_webrtc_root) && <@(re_run_gyp) <@(re_run_targets))',
+      '<!(cd <(webrtc_depot_dir) && <@(re_run_gyp) <@(re_run_targets))',
   },
   # Since these are used to generate things needed by other targets, make
   # them hard dependencies so they are always built first.

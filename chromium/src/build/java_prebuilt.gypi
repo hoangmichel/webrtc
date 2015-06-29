@@ -20,7 +20,7 @@
 
 {
   'dependencies': [
-    '<(peeracle_webrtc_root)/build/android/setup.gyp:build_output_dirs'
+    '<(webrtc_depot_dir)/build/android/setup.gyp:build_output_dirs'
   ],
   'variables': {
     'dex_path': '<(PRODUCT_DIR)/lib.java/<(_target_name).dex.jar',
@@ -64,8 +64,8 @@
           'message': 'Proguard preprocessing <(_target_name) jar',
           'inputs': [
             '<(android_sdk_root)/tools/proguard/lib/proguard.jar',
-            '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
-            '<(peeracle_webrtc_root)/build/android/gyp/proguard.py',
+            '<(webrtc_depot_dir)/build/android/gyp/util/build_utils.py',
+            '<(webrtc_depot_dir)/build/android/gyp/proguard.py',
             '<(jar_path)',
             '<(proguard_config)',
           ],
@@ -73,7 +73,7 @@
             '<(dex_input_jar_path)',
           ],
           'action': [
-            'python', '<(peeracle_webrtc_root)/build/android/gyp/proguard.py',
+            'python', '<(webrtc_depot_dir)/build/android/gyp/proguard.py',
             '--proguard-path=<(android_sdk_root)/tools/proguard/lib/proguard.jar',
             '--input-path=<(jar_path)',
             '--output-path=<(dex_input_jar_path)',

@@ -15,8 +15,8 @@
 
 {
   'variables': {
-    'grit_cmd': ['python', '<(peeracle_webrtc_root)/tools/grit/grit.py'],
-    'grit_resource_ids%': '<(peeracle_webrtc_root)/tools/gritsettings/resource_ids',
+    'grit_cmd': ['python', '<(webrtc_depot_dir)/tools/grit/grit.py'],
+    'grit_resource_ids%': '<(webrtc_depot_dir)/tools/gritsettings/resource_ids',
     # This makes it possible to add more defines in specific targets,
     # instead of build/common.gypi .
     'grit_additional_defines%': [],

@@ -20,7 +20,7 @@
       ['emma_instrument != 0', {
         'extra_instr_args': [
           '--sources=<(java_in_dir)/src >(additional_src_dirs) >(generated_src_dirs)',
-          '--src-root=<(peeracle_webrtc_root)',
+          '--src-root=<(webrtc_depot_dir)',
           '--emma-jar=<(emma_jar)',
           '--filter-string=<(emma_filter)',
         ],
@@ -38,12 +38,12 @@
     ]
   },
   'inputs': [
-    '<(peeracle_webrtc_root)/build/android/gyp/emma_instr.py',
-    '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
-    '<(peeracle_webrtc_root)/build/android/pylib/utils/command_option_parser.py',
+    '<(webrtc_depot_dir)/build/android/gyp/emma_instr.py',
+    '<(webrtc_depot_dir)/build/android/gyp/util/build_utils.py',
+    '<(webrtc_depot_dir)/build/android/pylib/utils/command_option_parser.py',
   ],
   'action': [
-    'python', '<(peeracle_webrtc_root)/build/android/gyp/emma_instr.py',
+    'python', '<(webrtc_depot_dir)/build/android/gyp/emma_instr.py',
     '<(instr_action)',
     '--input-path=<(input_path)',
     '--output-path=<(output_path)',

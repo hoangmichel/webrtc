@@ -122,7 +122,7 @@
             '<@(codecs)',
             'audio_decoder_interface',
             'neteq_unittest_tools',
-            '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+            '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
             '<(webrtc_root)/common_audio/common_audio.gyp:common_audio',
             '<(webrtc_root)/test/test.gyp:test_support_main',
           ],
@@ -143,7 +143,7 @@
           'conditions': [
             ['OS=="android"', {
               'dependencies': [
-                '<(peeracle_webrtc_root)/testing/android/native_test.gyp:native_test_native_code',
+                '<(webrtc_depot_dir)/testing/android/native_test.gyp:native_test_native_code',
               ],
             }],
           ],

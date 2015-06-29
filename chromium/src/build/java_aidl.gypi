@@ -11,7 +11,7 @@
 #   'type': 'none',
 #   'variables': {
 #     'aidl_interface_file': '<interface-path>/<interface-file>.aidl',
-#     'aidl_import_include': '<(peeracle_webrtc_root)/<path-to-src-dir>',
+#     'aidl_import_include': '<(webrtc_depot_dir)/<path-to-src-dir>',
 #   },
 #   'sources': {
 #     '<input-path1>/<input-file1>.aidl',

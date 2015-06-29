@@ -27,7 +27,7 @@
 
 {
   'variables': {
-    'create_importlib': '<(peeracle_webrtc_root)/build/win/importlibs/create_importlib_win.py',
+    'create_importlib': '<(webrtc_depot_dir)/build/win/importlibs/create_importlib_win.py',
     'lib_dir': '<(PRODUCT_DIR)/lib',
   },
   'rules': [

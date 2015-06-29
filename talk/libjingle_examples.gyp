@@ -103,7 +103,7 @@
           'conditions': [
             ['build_json==1', {
               'dependencies': [
-                '<(peeracle_webrtc_root)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
+                '<(webrtc_depot_dir)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
               ],
             }],
             # TODO(ronghuawu): Move these files to a win/ directory then they
@@ -269,7 +269,7 @@
             }],
             ['target_arch=="ia32"', {
               'dependencies' : [
-                '<(peeracle_webrtc_root)/testing/iossim/iossim.gyp:iossim#host',
+                '<(webrtc_depot_dir)/testing/iossim/iossim.gyp:iossim#host',
               ],
             }],
           ],

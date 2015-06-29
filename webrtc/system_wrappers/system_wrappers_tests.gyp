@@ -13,7 +13,7 @@
       'target_name': 'system_wrappers_unittests',
       'type': '<(gtest_target_type)',
       'dependencies': [
-        '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+        '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
         '<(webrtc_root)/system_wrappers/system_wrappers.gyp:system_wrappers',
         '<(webrtc_root)/test/test.gyp:test_support_main',
       ],
@@ -48,7 +48,7 @@
         }],
         ['OS=="android"', {
           'dependencies': [
-            '<(peeracle_webrtc_root)/testing/android/native_test.gyp:native_test_native_code',
+            '<(webrtc_depot_dir)/testing/android/native_test.gyp:native_test_native_code',
           ],
         }],
       ],

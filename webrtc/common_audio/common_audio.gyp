@@ -129,7 +129,7 @@
           'defines': ['RTC_USE_OPENMAX_DL',],
           'conditions': [
             ['build_openmax_dl==1', {
-              'dependencies': ['<(peeracle_webrtc_root)/third_party/openmax_dl/dl/dl.gyp:openmax_dl',],
+              'dependencies': ['<(webrtc_depot_dir)/third_party/openmax_dl/dl/dl.gyp:openmax_dl',],
             }],
           ],
         }],
@@ -245,8 +245,8 @@
           'dependencies': [
             'common_audio',
             '<(webrtc_root)/test/test.gyp:test_support_main',
-            '<(peeracle_webrtc_root)/testing/gmock.gyp:gmock',
-            '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+            '<(webrtc_depot_dir)/testing/gmock.gyp:gmock',
+            '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
           ],
           'sources': [
             'audio_converter_unittest.cc',
@@ -282,7 +282,7 @@
             }],
             ['OS=="android"', {
               'dependencies': [
-                '<(peeracle_webrtc_root)/testing/android/native_test.gyp:native_test_native_code',
+                '<(webrtc_depot_dir)/testing/android/native_test.gyp:native_test_native_code',
               ],
             }],
           ],

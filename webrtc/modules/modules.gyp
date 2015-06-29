@@ -80,9 +80,9 @@
             'webrtc_utility',
             'webrtc_video_coding',
             '<@(neteq_dependencies)',
-            '<(peeracle_webrtc_root)/testing/gmock.gyp:gmock',
-            '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
-            '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',
+            '<(webrtc_depot_dir)/testing/gmock.gyp:gmock',
+            '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
+            '<(webrtc_depot_dir)/third_party/gflags/gflags.gyp:gflags',
             '<(webrtc_root)/common.gyp:webrtc_common',
             '<(webrtc_root)/common_audio/common_audio.gyp:common_audio',
             '<(webrtc_root)/modules/modules.gyp:video_capture',
@@ -328,7 +328,7 @@
             }],
             ['OS=="android"', {
               'dependencies': [
-                '<(peeracle_webrtc_root)/testing/android/native_test.gyp:native_test_native_code',
+                '<(webrtc_depot_dir)/testing/android/native_test.gyp:native_test_native_code',
               ],
               # Need to disable error due to the line in
               # base/android/jni_android.h triggering it:
@@ -372,7 +372,7 @@
           'target_name': 'modules_tests',
           'type': '<(gtest_target_type)',
           'dependencies': [
-            '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+            '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
             '<(webrtc_root)/common.gyp:webrtc_common',
             '<(webrtc_root)/common_video/common_video.gyp:common_video',
             '<(webrtc_root)/modules/video_coding/codecs/vp8/vp8.gyp:webrtc_vp8',
@@ -417,7 +417,7 @@
           'conditions': [
             ['OS=="android"', {
               'dependencies': [
-                '<(peeracle_webrtc_root)/testing/android/native_test.gyp:native_test_native_code',
+                '<(webrtc_depot_dir)/testing/android/native_test.gyp:native_test_native_code',
               ],
             }],
           ],

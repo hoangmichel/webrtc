@@ -14,7 +14,7 @@
 
 {
   'variables': {
-    'gflags_root': '<(peeracle_webrtc_root)/third_party/gflags',
+    'gflags_root': '<(webrtc_depot_dir)/third_party/gflags',
     'conditions': [
       ['OS=="win"', {
         'gflags_gen_arch_root': '<(gflags_root)/gen/win',

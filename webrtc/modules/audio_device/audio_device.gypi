@@ -207,7 +207,7 @@
             'audio_device',
             'webrtc_utility',
             '<(webrtc_root)/test/test.gyp:test_support_main',
-            '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+            '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
             '<(webrtc_root)/system_wrappers/system_wrappers.gyp:system_wrappers',
           ],
           'sources': [
@@ -224,7 +224,7 @@
             '<(webrtc_root)/common_audio/common_audio.gyp:common_audio',
             '<(webrtc_root)/system_wrappers/system_wrappers.gyp:system_wrappers',
             '<(webrtc_root)/test/test.gyp:test_support',
-            '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
+            '<(webrtc_depot_dir)/testing/gtest.gyp:gtest',
           ],
           'sources': [
             'test/audio_device_test_func.cc',

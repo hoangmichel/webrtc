@@ -26,8 +26,8 @@
     'input_paths': [],
   },
   'inputs': [
-    '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
-    '<(peeracle_webrtc_root)/build/android/gyp/strip_library_for_device.py',
+    '<(webrtc_depot_dir)/build/android/gyp/util/build_utils.py',
+    '<(webrtc_depot_dir)/build/android/gyp/strip_library_for_device.py',
     '<(ordered_libraries_file)',
     '>@(input_paths)',
   ],
@@ -43,7 +43,7 @@
     }],
   ],
   'action': [
-    'python', '<(peeracle_webrtc_root)/build/android/gyp/strip_library_for_device.py',
+    'python', '<(webrtc_depot_dir)/build/android/gyp/strip_library_for_device.py',
     '--android-strip=<(android_strip)',
     '--android-strip-arg=--strip-unneeded',
     '--stripped-libraries-dir=<(stripped_libraries_dir)',

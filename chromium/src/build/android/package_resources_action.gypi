@@ -31,8 +31,8 @@
   'message': 'packaging resources for <(apk_name)',
   'inputs': [
     # TODO: This isn't always rerun correctly, http://crbug.com/351928
-    '<(peeracle_webrtc_root)/build/android/gyp/util/build_utils.py',
-    '<(peeracle_webrtc_root)/build/android/gyp/package_resources.py',
+    '<(webrtc_depot_dir)/build/android/gyp/util/build_utils.py',
+    '<(webrtc_depot_dir)/build/android/gyp/package_resources.py',
     '<(android_manifest_path)',
     '<@(extra_inputs)',
   ],
@@ -40,7 +40,7 @@
     '<(resource_packaged_apk_path)',
   ],
   'action': [
-    'python', '<(peeracle_webrtc_root)/build/android/gyp/package_resources.py',
+    'python', '<(webrtc_depot_dir)/build/android/gyp/package_resources.py',
     '--android-sdk', '<(android_sdk)',
     '--android-sdk-tools', '<(android_sdk_tools)',
     '--configuration-name', '<(CONFIGURATION_NAME)',
