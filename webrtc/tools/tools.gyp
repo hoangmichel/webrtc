@@ -90,7 +90,7 @@
       'target_name': 'force_mic_volume_max',
       'type': 'executable',
       'dependencies': [
-        '<(webrtc_root)/voice_engine/voice_engine.gyp:voice_engine',
+#        '<(webrtc_root)/voice_engine/voice_engine.gyp:voice_engine',
         '<(webrtc_root)/system_wrappers/system_wrappers.gyp:system_wrappers_default',
       ],
       'sources': [
@@ -107,7 +107,7 @@
           'dependencies': [
             '<(webrtc_root)/common_audio/common_audio.gyp:common_audio',
             '<(webrtc_root)/modules/modules.gyp:audio_processing',
-            '<(webrtc_root)/voice_engine/voice_engine.gyp:voice_engine',
+#            '<(webrtc_root)/voice_engine/voice_engine.gyp:voice_engine',
           ],
           'sources': [
             'agc/agc_manager.cc',
@@ -170,7 +170,7 @@
           'type': 'executable',
           'dependencies': [
             '<(webrtc_root)/test/test.gyp:channel_transport',
-            '<(webrtc_root)/voice_engine/voice_engine.gyp:voice_engine',
+#            '<(webrtc_root)/voice_engine/voice_engine.gyp:voice_engine',
             '<(webrtc_root)/system_wrappers/system_wrappers.gyp:system_wrappers_default',
             '<(peeracle_webrtc_root)/testing/gtest.gyp:gtest',
             '<(peeracle_webrtc_root)/third_party/gflags/gflags.gyp:gflags',

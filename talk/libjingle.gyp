@@ -406,10 +406,10 @@
       'type': 'static_library',
       'dependencies': [
         '<(webrtc_root)/common.gyp:webrtc_common',
-        '<(webrtc_root)/modules/modules.gyp:video_render_module',
+        #'<(webrtc_root)/modules/modules.gyp:video_render_module',
         '<(webrtc_root)/webrtc.gyp:webrtc',
-        '<(webrtc_root)/voice_engine/voice_engine.gyp:voice_engine',
-        '<(webrtc_root)/sound/sound.gyp:rtc_sound',
+        #'<(webrtc_root)/voice_engine/voice_engine.gy:voice_engine',
+        #'<(webrtc_root)/sound/sound.gyp:rtc_sound',
         '<(webrtc_root)/system_wrappers/system_wrappers.gyp:system_wrappers',
         '<(webrtc_root)/system_wrappers/system_wrappers.gyp:system_wrappers_default',
         '<(webrtc_root)/libjingle/xmllite/xmllite.gyp:rtc_xmllite',
@@ -517,17 +517,17 @@
             '<(peeracle_webrtc_root)/third_party/usrsctp/usrsctp.gyp:usrsctplib',
           ],
         }],
-        ['build_with_chromium==1', {
-          'dependencies': [
-            '<(webrtc_root)/modules/modules.gyp:video_capture',
-            '<(webrtc_root)/modules/modules.gyp:video_render',
-          ],
-        }, {
-          'dependencies': [
-            '<(webrtc_root)/modules/modules.gyp:video_capture_module_internal_impl',
-            '<(webrtc_root)/modules/modules.gyp:video_render_module_internal_impl',
-          ],
-        }],
+        #['build_with_chromium==1', {
+        #  'dependencies': [
+        #    '<(webrtc_root)/modules/modules.gyp:video_capture',
+        #    '<(webrtc_root)/modules/modules.gyp:video_render',
+        #  ],
+        #}, {
+        #  'dependencies': [
+        #    '<(webrtc_root)/modules/modules.gyp:video_capture_module_internal_impl',
+        #    '<(webrtc_root)/modules/modules.gyp:video_render_module_internal_impl',
+        #  ],
+        #}],
         ['OS=="linux"', {
           'sources': [
             'media/devices/libudevsymboltable.cc',

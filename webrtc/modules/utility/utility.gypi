@@ -12,9 +12,9 @@
       'target_name': 'webrtc_utility',
       'type': 'static_library',
       'dependencies': [
-        'audio_coding_module',
+        #'audio_coding_module',
         'media_file',
-        '<(webrtc_root)/common_audio/common_audio.gyp:common_audio',
+        #'<(webrtc_root)/common_audio/common_audio.gyp:common_audio',
         '<(webrtc_root)/system_wrappers/system_wrappers.gyp:system_wrappers',
       ],
       'sources': [

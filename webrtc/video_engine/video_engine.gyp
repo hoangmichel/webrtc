@@ -9,7 +9,7 @@
 {
   'includes': [
     '../build/common.gypi',
-    './video_engine_core.gypi',
+    #'./video_engine_core.gypi',
   ],
 }
 

@@ -19,23 +19,23 @@
   ],
   'includes': [
     'build/common.gypi',
-    'video/webrtc_video.gypi',
+    #'video/webrtc_video.gypi',
   ],
   'variables': {
     'webrtc_all_dependencies': [
       'base/base.gyp:*',
-      'sound/sound.gyp:*',
+      #'sound/sound.gyp:*',
       'common.gyp:*',
-      'common_audio/common_audio.gyp:*',
-      'common_video/common_video.gyp:*',
+      #'common_audio/common_audio.gyp:*',
+      #'common_video/common_video.gyp:*',
       'modules/modules.gyp:*',
       'p2p/p2p.gyp:*',
       'system_wrappers/system_wrappers.gyp:*',
       'tools/tools.gyp:*',
-      'video_engine/video_engine.gyp:*',
-      'voice_engine/voice_engine.gyp:*',
-      '<(webrtc_vp8_dir)/vp8.gyp:*',
-      '<(webrtc_vp9_dir)/vp9.gyp:*',
+      #'video_engine/video_engine.gyp:*',
+      #'voice_engine/voice_engine.gyp:*',
+      #'<(webrtc_vp8_dir)/vp8.gyp:*',
+      #'<(webrtc_vp9_dir)/vp9.gyp:*',
     ],
   },
   'targets': [
@@ -75,19 +75,19 @@
         'video_renderer.h',
         'video_send_stream.h',
 
-        '<@(webrtc_video_sources)',
+        #'<@(webrtc_video_sources)',
       ],
       'dependencies': [
         'common.gyp:*',
-        '<@(webrtc_video_dependencies)',
+        #'<@(webrtc_video_dependencies)',
       ],
       'conditions': [
         # TODO(andresp): Chromium libpeerconnection should link directly with
         # this and no if conditions should be needed on webrtc build files.
         ['build_with_chromium==1', {
           'dependencies': [
-            '<(webrtc_root)/modules/modules.gyp:video_capture',
-            '<(webrtc_root)/modules/modules.gyp:video_render',
+            #'<(webrtc_root)/modules/modules.gyp:video_capture',
+            #'<(webrtc_root)/modules/modules.gyp:video_render',
           ],
         }],
       ],

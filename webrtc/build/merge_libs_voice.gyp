@@ -18,7 +18,7 @@
       'type': 'executable',
       'dependencies': [
         '<@(merge_libs_dependencies)',
-        '../voice_engine/voice_engine.gyp:voice_engine'
+        #'../voice_engine/voice_engine.gyp:voice_engine'
       ],
       'sources': ['no_op.cc',],
     },
